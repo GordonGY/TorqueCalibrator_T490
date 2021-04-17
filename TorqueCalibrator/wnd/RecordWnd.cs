@@ -240,7 +240,7 @@ namespace TorqueCalibrator.wnd
                     if (MessageBox.Show("confirm print?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
                         //executeToExcel(recordList[e.RowIndex]);
-                        executeToWord(befterSeriesNumShowList[e.RowIndex]);
+                        executeToWord(befterSeriesNumShowList[e.RowIndex],afterSeriesNumShowList[e.RowIndex]);
                     }
                 }
 
@@ -251,7 +251,7 @@ namespace TorqueCalibrator.wnd
             }
 
         }
-        private void executeToWord(Record record)
+        private void executeToWord(Record beforeRecord, Record afterRecord)
         {
 
             oWord.Visible = true;
@@ -276,35 +276,35 @@ namespace TorqueCalibrator.wnd
                 // ToolCode,Date,NominalValue,MaxValue,MinValue,TestData1,TestData2,TestData3,Conclusion,CheckName,QSName,
                 // AfterMaxValue,AfterMinValue,AfterTorqueValue,AfterDate,AfterCheckName,AfterQSName,AfterConclusion
                 
-                if (oDoc.Bookmarks[i].Name.Equals("ToolCode")) oDoc.Bookmarks[i].Range.Text = record.SeriesNum;
-                if (oDoc.Bookmarks[i].Name.Equals("Date")) oDoc.Bookmarks[i].Range.Text = record.CreateTime.ToString(); 
-                if (oDoc.Bookmarks[i].Name.Equals("NominalValue")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[0].Standard.ToString();
-                if (oDoc.Bookmarks[i].Name.Equals("MaxValue")) oDoc.Bookmarks[i].Range.Text = ((record.RecordDetailList[0].Upper+1)*record.RecordDetailList[0].Standard).ToString(); 
-                if (oDoc.Bookmarks[i].Name.Equals("MinValue")) oDoc.Bookmarks[i].Range.Text = ((record.RecordDetailList[0].Lower+1)*record.RecordDetailList[0].Standard).ToString(); 
-                if(record.RecordDetailList.Count == 1)
+                if (oDoc.Bookmarks[i].Name.Equals("ToolCode")) oDoc.Bookmarks[i].Range.Text = beforeRecord.SeriesNum;
+                if (oDoc.Bookmarks[i].Name.Equals("Date")) oDoc.Bookmarks[i].Range.Text = beforeRecord.CreateTime.ToString(); 
+                if (oDoc.Bookmarks[i].Name.Equals("NominalValue")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[0].Standard.ToString();
+                if (oDoc.Bookmarks[i].Name.Equals("MaxValue")) oDoc.Bookmarks[i].Range.Text = ((beforeRecord.RecordDetailList[0].Upper+1)*beforeRecord.RecordDetailList[0].Standard).ToString(); 
+                if (oDoc.Bookmarks[i].Name.Equals("MinValue")) oDoc.Bookmarks[i].Range.Text = ((beforeRecord.RecordDetailList[0].Lower+1)*beforeRecord.RecordDetailList[0].Standard).ToString(); 
+                if(beforeRecord.RecordDetailList.Count == 1)
                 {
-                    if (oDoc.Bookmarks[i].Name.Equals("TestData1")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[0].TestValue.ToString();
-                }else if(record.RecordDetailList.Count == 2)
+                    if (oDoc.Bookmarks[i].Name.Equals("TestData1")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[0].TestValue.ToString();
+                }else if(beforeRecord.RecordDetailList.Count == 2)
                 {
-                    if (oDoc.Bookmarks[i].Name.Equals("TestData1")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[0].TestValue.ToString();
-                    if (oDoc.Bookmarks[i].Name.Equals("TestData2")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[1].TestValue.ToString();
-                }else if(record.RecordDetailList.Count == 3)
+                    if (oDoc.Bookmarks[i].Name.Equals("TestData1")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[0].TestValue.ToString();
+                    if (oDoc.Bookmarks[i].Name.Equals("TestData2")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[1].TestValue.ToString();
+                }else if(beforeRecord.RecordDetailList.Count == 3)
                 {
-                    if (oDoc.Bookmarks[i].Name.Equals("TestData1")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[0].TestValue.ToString();
-                    if (oDoc.Bookmarks[i].Name.Equals("TestData2")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[1].TestValue.ToString();
-                    if (oDoc.Bookmarks[i].Name.Equals("TestData3")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[2].TestValue.ToString();
+                    if (oDoc.Bookmarks[i].Name.Equals("TestData1")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[0].TestValue.ToString();
+                    if (oDoc.Bookmarks[i].Name.Equals("TestData2")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[1].TestValue.ToString();
+                    if (oDoc.Bookmarks[i].Name.Equals("TestData3")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[2].TestValue.ToString();
                 }            
-                if (oDoc.Bookmarks[i].Name.Equals("Conclusion")) oDoc.Bookmarks[i].Range.Text = record.Result == 1 ? "不合格non-conformity":"合格conformity";
-                if (oDoc.Bookmarks[i].Name.Equals("CheckName")) oDoc.Bookmarks[i].Range.Text = record.Operator.ToString(); 
+                if (oDoc.Bookmarks[i].Name.Equals("Conclusion")) oDoc.Bookmarks[i].Range.Text = beforeRecord.Result == 1 ? "不合格non-conformity":"合格conformity";
+                if (oDoc.Bookmarks[i].Name.Equals("CheckName")) oDoc.Bookmarks[i].Range.Text = beforeRecord.Operator.ToString();
                 //if (oDoc.Bookmarks[i].Name.Equals("QSName")) oDoc.Bookmarks[i].Range.Text = record.ProName;
-                
-                //if (oDoc.Bookmarks[i].Name.Equals("AfterMaxValue")) oDoc.Bookmarks[i].Range.Text = record.RecordDetailList[0].;
-                //if (oDoc.Bookmarks[i].Name.Equals("AfterMinValue")) oDoc.Bookmarks[i].Range.Text = record.CreateTime.ToString(); 
-                //if (oDoc.Bookmarks[i].Name.Equals("AfterTorqueValue")) oDoc.Bookmarks[i].Range.Text = record.ProName;
-                //if (oDoc.Bookmarks[i].Name.Equals("AfterDate")) oDoc.Bookmarks[i].Range.Text = record.Operator;
-                //if (oDoc.Bookmarks[i].Name.Equals("AfterCheckName")) oDoc.Bookmarks[i].Range.Text = record.CreateTime.ToString(); 
-                ////if (oDoc.Bookmarks[i].Name.Equals("AfterQSName")) oDoc.Bookmarks[i].Range.Text = record.ProName;
-                //if (oDoc.Bookmarks[i].Name.Equals("AfterConclusion")) oDoc.Bookmarks[i].Range.Text = record.ProName;
+
+                if (oDoc.Bookmarks[i].Name.Equals("AfterMaxValue")) oDoc.Bookmarks[i].Range.Text = ((afterRecord.RecordDetailList[0].Upper+1)*afterRecord.RecordDetailList[0].Standard).ToString(); 
+                if (oDoc.Bookmarks[i].Name.Equals("AfterMinValue")) oDoc.Bookmarks[i].Range.Text = ((afterRecord.RecordDetailList[0].Lower+1)*afterRecord.RecordDetailList[0].Standard).ToString(); 
+                if (oDoc.Bookmarks[i].Name.Equals("AfterTorqueValue")) oDoc.Bookmarks[i].Range.Text = afterRecord.RecordDetailList[0].TestValue.ToString();
+                if (oDoc.Bookmarks[i].Name.Equals("AfterDate")) oDoc.Bookmarks[i].Range.Text = afterRecord.CreateTime.ToString();
+                if (oDoc.Bookmarks[i].Name.Equals("AfterCheckName")) oDoc.Bookmarks[i].Range.Text = afterRecord.Operator;
+                //if (oDoc.Bookmarks[i].Name.Equals("AfterQSName")) oDoc.Bookmarks[i].Range.Text = afterRecord.ProName;
+                if (oDoc.Bookmarks[i].Name.Equals("AfterConclusion")) oDoc.Bookmarks[i].Range.Text = afterRecord.Result == 1 ? "不合格non-conformity":"合格conformity";
             }
             oDoc.PrintOut();
             oDoc.Save();

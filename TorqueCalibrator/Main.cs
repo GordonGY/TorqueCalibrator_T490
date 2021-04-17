@@ -303,10 +303,14 @@ namespace TorqueCalibrator
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            
             try
             {
                 addCommonHintMessage("-----------------------");
                 addCommonHintMessage("开始");
+                
+                //关闭按钮使能
+                barButtonItem1.Enabled = false;
 
                 if (seriesNumTbx.Text == "")
                 {
@@ -851,6 +855,8 @@ namespace TorqueCalibrator
         //停止试验按钮
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //打开按钮使能
+            barButtonItem1.Enabled = true;
             //试验完成后置位试验结束,为了试验停止
             s7help.WriteTestEnd(true);
         }

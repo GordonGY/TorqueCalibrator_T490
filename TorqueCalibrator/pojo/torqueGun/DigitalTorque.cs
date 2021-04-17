@@ -240,8 +240,20 @@ namespace TorqueCalibrator.pojo.torqueGun
             }
             //保存数据
             saveRecord();
+            //打开开始试验按钮使能
+            OpenStartButtonEnable();
             //本地试验完成
             MessageBox.Show("本次试验完成！");
+        }
+        //打开开始试验按钮使能
+        private void OpenStartButtonEnable()
+        {
+            if(wnd.InvokeRequired)
+            {
+                wnd.Invoke(new Action(OpenStartButtonEnable));
+                return;
+            }
+            wnd.barButtonItem1.Enabled = true;
         }
         public void DataGridViewClear()
         {
