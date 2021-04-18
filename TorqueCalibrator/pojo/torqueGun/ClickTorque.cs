@@ -22,11 +22,10 @@ namespace TorqueCalibrator.pojo.torqueGun
             Action<TextBox, string> changeWndText = new Action<TextBox, string>(changeWndTextBoxText);
             Action<RichTextBox, string> changeWndRich = new Action<RichTextBox, string>(changeWndRichTextBoxText);
             Action<DataGridView, RecordDetail, bool> changeWndDgv = new Action<DataGridView, RecordDetail, bool>(changeWndDgvText);
-            //清空RecordDetailDgv界面
-            //DataGridViewClear();
-            
+
             //清空RecordDetailDgv界面
             wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, null, true);
+            
             //初始化记录
             this.initRecord(this.CheckMode);
             Vars.Result = "";
@@ -69,26 +68,20 @@ namespace TorqueCalibrator.pojo.torqueGun
 
 
                     //试验速度模式使能
-                    if (!Vars.ControlMode) s7Help.WriteMotorStartV(true);
+                    if (!Vars.ControlMode)
+                    {
+                        s7Help.WriteMotorStartV(true);
+                        wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验,电机开始运动！");
+                    }
                     
                     //数据采集，完成后停止
                     while (true)
                     {
                         if (Vars.Result.Contains(@"N.m"))
                         {
-                            //wnd.Controls["textBox4"].Invoke(changeWndText, (TextBox)wnd.Controls["textBox4"], Vars.Result);
                             currentRecordDetail.TestValue = float.Parse(Vars.Result.Substring(0, Vars.Result.Length - 4));
                             currentRecordDetail.judgeResult();
-                            if (currentRecordDetail.Result == 1)
-                            {
-                                //wnd.Controls["textBox5"].Invoke(changeWndText, (TextBox)wnd.Controls["textBox5"], "合格");
-                                s7Help.WriteTestProcessResult(1);
-                            }
-                            else
-                            {
-                                //wnd.Controls["textBox5"].Invoke(changeWndText, (TextBox)wnd.Controls["textBox5"], "不合格");
-                                s7Help.WriteTestProcessResult(2);
-                            }
+                            s7Help.WriteTestProcessResult(currentRecordDetail.Result == 1 ? 1 : 2);
                             break;
                         }
 
@@ -100,14 +93,14 @@ namespace TorqueCalibrator.pojo.torqueGun
 
                     Vars.Result = "";
                     currentRecordDetail.ManualWriteValue = 0;
-
-                    hybirdLock.Enter();
-                    //wnd.Controls["RecordDetailDgv"].Invoke(changeWndDgv, (DataGridView)wnd.Controls["RecordDetailDgv"], currentRecordDetail, false);
-                    wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, currentRecordDetail, false);
-                    currentRecord.RecordDetailList.Add(currentRecordDetail);
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "采集完成++++++");
                     
+                    wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, currentRecordDetail, false);
+                   
+                    hybirdLock.Enter();
+                    currentRecord.RecordDetailList.Add(currentRecordDetail);
                     hybirdLock.Leave();
+
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第"+ (j+1).ToString()+"次试验数据采集完成！");
 
                     Thread.Sleep(200);
 
@@ -120,13 +113,15 @@ namespace TorqueCalibrator.pojo.torqueGun
                         }
                         Thread.Sleep(100);
                     }
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "已停止");
-                    
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验,电机停止运动！");
+
                     //电机回零速度设置
                     if (!Vars.ControlMode) s7Help.WriteMotorToZeroSpeed(toZeroSpeed);
                     Thread.Sleep(100);
+                    
                     //电机回零
                     if (!Vars.ControlMode) s7Help.WriteMotorToZero(true);
+                    
                     //等待回零完成
                     while (true && !Vars.ControlMode)
                     {
@@ -136,7 +131,7 @@ namespace TorqueCalibrator.pojo.torqueGun
                         }
                         Thread.Sleep(100);
                     }
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "已回零");
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验，电机已回零！");
                 }
                 //试验完成后置位试验结束
                 s7Help.WriteTestEnd(true);
@@ -146,7 +141,8 @@ namespace TorqueCalibrator.pojo.torqueGun
 
             //打开开始试验按钮使能
             OpenStartButtonEnable();
-            
+            wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "本次试验已完成！");
+            wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "-----------------------");
             //本地试验完成
             MessageBox.Show("本次试验完成！");
         }

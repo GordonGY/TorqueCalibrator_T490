@@ -307,16 +307,21 @@ namespace TorqueCalibrator
             try
             {
                 addCommonHintMessage("-----------------------");
-                addCommonHintMessage("开始");
+                addCommonHintMessage("试验开始");
                 
                 //关闭按钮使能
                 barButtonItem1.Enabled = false;
 
                 if (seriesNumTbx.Text == "")
                 {
+                    addCommonHintMessage("未扫描或输入工具编号，试验结束！");
+                    addCommonHintMessage("-----------------------");
+                    //打开试验使能
+                    barButtonItem1.Enabled = true;
                     MessageBox.Show("请扫描或输入工具编号");
+                    
+                    
                     return;
-                    throw new Exception("请扫描或输入工具编号");
                 }
 
                 //清空试验记录表格
@@ -325,13 +330,16 @@ namespace TorqueCalibrator
                 Product product = productService.selectOneBySeriesNum(seriesNumTbx.Text);
                 if (product == null)
                 {
+                    addCommonHintMessage("不存在该型号的测试大纲，请联系管理员进行添加，试验结束！");
+                    addCommonHintMessage("-----------------------");
                     MessageBox.Show("不存在该型号的测试大纲，请联系管理员进行添加");
                     return;
-                    throw new Exception("不存在该型号的测试大纲，请联系管理员进行添加");
                 }
                 //判断PLC状态
                 if(!s7help.ReadPLCStatus())
                 {
+                    addCommonHintMessage("试验台未初始化完毕，试验结束！");
+                    addCommonHintMessage("-----------------------");
                     MessageBox.Show("请等待试验台初始化完成后开始试验！");
                     return;
                 }
@@ -340,8 +348,8 @@ namespace TorqueCalibrator
                 Vars.ControlMode = ManualChoseCB1.Checked ? true : false;
 
                 //试验完成后置位试验结束,为了试验初始化
-                s7help.WriteTestEnd(true);
-                Thread.Sleep(100);
+                //s7help.WriteTestEnd(true);
+                //Thread.Sleep(100);
 
                 BaseTorque torque;
                 //选择校验模式，base_tool中CHECK_MODE
@@ -402,7 +410,6 @@ namespace TorqueCalibrator
                     torque.CheckMode = 0;
                 }
                 addGoodHintMessage("大纲导入成功");
-                addGoodHintMessage("开始测试.....");
                 //线程
                 Thread th_temp = new Thread(torque.doTest);
                 th_temp.Start();
