@@ -77,18 +77,20 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.ManualChoseCB = new DevExpress.XtraBars.BarCheckItem();
-            this.postCheckRbx = new DevExpress.XtraBars.BarCheckItem();
+           
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemHypertextLabel2 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barHeaderItem1 = new DevExpress.XtraBars.BarHeaderItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.ManualChoseCB1 = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.postCheckRbx1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -464,14 +466,16 @@
             this.barButtonItem4,
             this.barButtonItem5,
             this.ManualChoseCB,
-            this.postCheckRbx,
+            //this.postCheckRbx,
             this.barEditItem1,
             this.barStaticItem1,
             this.barHeaderItem1,
-            this.barButtonItem8});
+            this.barButtonItem8,
+            this.ManualChoseCB1,
+            this.postCheckRbx1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.ribbonControl1.MaxItemId = 19;
+            this.ribbonControl1.MaxItemId = 21;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -551,10 +555,10 @@
             // 
             // postCheckRbx
             // 
-            this.postCheckRbx.Caption = "回校";
-            this.postCheckRbx.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
-            this.postCheckRbx.Id = 8;
-            this.postCheckRbx.Name = "postCheckRbx";
+            //this.postCheckRbx.Caption = "回校";
+            //this.postCheckRbx.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            //this.postCheckRbx.Id = 8;
+            //this.postCheckRbx.Name = "postCheckRbx";
             // 
             // barEditItem1
             // 
@@ -588,14 +592,26 @@
             this.barButtonItem8.Name = "barButtonItem8";
             this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
+            // ManualChoseCB1
+            // 
+            this.ManualChoseCB1.Caption = "“手动模式”开关";
+            this.ManualChoseCB1.Id = 19;
+            this.ManualChoseCB1.Name = "ManualChoseCB1";
+            // 
+            // postCheckRbx1
+            // 
+            this.postCheckRbx1.Caption = "“回校模式”开关";
+            this.postCheckRbx1.Id = 20;
+            this.postCheckRbx1.Name = "postCheckRbx1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
-            this.ribbonPageGroup6,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "试验";
             // 
@@ -614,17 +630,17 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem3);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("ribbonPageGroup6.ImageOptions.SvgImage")));
-            this.ribbonPageGroup6.ItemLinks.Add(this.ManualChoseCB);
-            this.ribbonPageGroup6.ItemLinks.Add(this.postCheckRbx);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            // 
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.ManualChoseCB1);
+            this.ribbonPageGroup8.ItemLinks.Add(this.postCheckRbx1);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
             // ribbonPage3
             // 
@@ -781,7 +797,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
@@ -800,7 +815,7 @@
         public System.Windows.Forms.DataGridView techDgv;
         public System.Windows.Forms.RichTextBox hintRtbx;
         public DevExpress.XtraBars.BarCheckItem ManualChoseCB;
-        public DevExpress.XtraBars.BarCheckItem postCheckRbx;
+        //public DevExpress.XtraBars.BarCheckItem postCheckRbx;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.Label seriesNumLab;
@@ -821,6 +836,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn upper1;
         private System.Windows.Forms.DataGridViewTextBoxColumn lower1;
         public DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraBars.BarToggleSwitchItem ManualChoseCB1;
+        private DevExpress.XtraBars.BarToggleSwitchItem postCheckRbx1;
     }
 }
 

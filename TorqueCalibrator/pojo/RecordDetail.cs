@@ -55,7 +55,15 @@ namespace TorqueCalibrator.pojo
                 this.Result = 0;
             }
             this.Difference = Math.Abs(this.TestValue - ManualWriteValue);
-            this.Percent = this.Difference / TestValue * 100;
+            if(this.TestValue == 0)
+            {
+                this.Percent = -1;
+            }
+            else
+            {
+                this.Percent = this.Difference / TestValue * 100;
+            }
+            
         }
     }
 }

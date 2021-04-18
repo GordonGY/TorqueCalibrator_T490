@@ -186,8 +186,14 @@ namespace TorqueCalibrator.pojo.torqueGun
                 return;
             }
             RecordDetailDgv.Rows.Add(1);
-
-            RecordDetailDgv.Rows[RecordDetailDgv.Rows.Count - 2].Cells["percent"].Value = rd.Percent.ToString("0.00");
+            if(rd.Percent == -1)
+            {
+                RecordDetailDgv.Rows[RecordDetailDgv.Rows.Count - 2].Cells["percent"].Value = "-";
+            }
+            else
+            {
+                RecordDetailDgv.Rows[RecordDetailDgv.Rows.Count - 2].Cells["percent"].Value = rd.Percent.ToString("0.00");
+            }
             RecordDetailDgv.Rows[RecordDetailDgv.Rows.Count - 2].Cells["result1"].Value = rd.Result == 1 ? "合格" : "不合格";
             RecordDetailDgv.Rows[RecordDetailDgv.Rows.Count - 2].Cells["Lower"].Value = rd.Lower;
             RecordDetailDgv.Rows[RecordDetailDgv.Rows.Count - 2].Cells["upper"].Value = rd.Upper;

@@ -50,6 +50,7 @@ namespace TorqueCalibrator.wnd
             else
             {
                 MessageBox.Show("请输入正确的扭矩值！");
+                return;
             }
 
             Vars.MnualDigitalResult = Regex.Replace(textBox1.Text, "^0*", "");
@@ -72,6 +73,7 @@ namespace TorqueCalibrator.wnd
             else
             {
                 MessageBox.Show("请输入正确的扭矩值！");
+                return;
             }
 
             Vars.MnualDigitalResult = Regex.Replace(textBox1.Text, "^0*", "");

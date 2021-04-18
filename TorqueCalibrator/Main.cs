@@ -158,7 +158,7 @@ namespace TorqueCalibrator
             //        throw new Exception("该型号未查询到试验大纲，请联系管理员进行添加");
             //    }
             //    //根据选择来决定是否是回校，回校只在此处以及record写入数据库时判断，其他时候不判断
-            //    if (postCheckRbx.Checked)
+            //    if (postCheckRbx11.Checked)
             //    {
             //        torque.CurrentTech = torque.PostTech;
             //        torque.CheckMode = 1;
@@ -210,7 +210,7 @@ namespace TorqueCalibrator
                 }
 
                 //确认检测模式
-                Vars.ControlMode = ManualChoseCB.Checked ? true : false;
+                Vars.ControlMode = ManualChoseCB1.Checked ? true : false;
 
                 //试验完成后置位试验结束,为了试验初始化
                 s7help.WriteTestEnd(true);
@@ -275,7 +275,7 @@ namespace TorqueCalibrator
                     throw new Exception("该型号未查询到试验大纲，请联系管理员进行添加");
                 }
                 //根据选择来决定是否是回校，回校只在此处以及record写入数据库时判断，其他时候不判断
-                if (postCheckRbx.Checked)
+                if (postCheckRbx1.Checked)
                 {
                     torque.CurrentTech = torque.PostTech;
                     torque.CheckMode = 1;
@@ -337,7 +337,7 @@ namespace TorqueCalibrator
                 }
 
                 //确认检测模式
-                Vars.ControlMode = ManualChoseCB.Checked ? true : false;
+                Vars.ControlMode = ManualChoseCB1.Checked ? true : false;
 
                 //试验完成后置位试验结束,为了试验初始化
                 s7help.WriteTestEnd(true);
@@ -391,7 +391,7 @@ namespace TorqueCalibrator
                     throw new Exception("该型号未查询到试验大纲，请联系管理员进行添加");
                 }
                 //根据选择来决定是否是回校，回校只在此处以及record写入数据库时判断，其他时候不判断
-                if (postCheckRbx.Checked)
+                if (postCheckRbx1.Checked)
                 {
                     torque.CurrentTech = torque.PostTech;
                     torque.CheckMode = 1;
@@ -733,7 +733,7 @@ namespace TorqueCalibrator
             for (int i = 0; i < techDetailList.Count; i++)
             {
                 //判断是否为回校参数
-                if (this.postCheckRbx.Checked)
+                if (this.postCheckRbx1.Checked)
                 { 
                     techDgv.Rows[i].Cells["id"].Value = techDetailList[i].Id;
                     techDgv.Rows[i].Cells["Tool_ID"].Value = techDetailList[i].ToolID;
@@ -772,7 +772,7 @@ namespace TorqueCalibrator
             for (int i = 0; i < techDetailList.Count; i++)
             {
                 //判断是否为回校参数
-                if (this.postCheckRbx.Checked)
+                if (this.postCheckRbx1.Checked)
                 { 
                     techDgv.Rows[i].Cells["id"].Value = techDetailList[i].ToolID;
                     techDgv.Rows[i].Cells["num1"].Value = techDetailList[i].PostNum;

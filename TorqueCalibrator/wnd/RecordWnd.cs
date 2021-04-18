@@ -37,6 +37,8 @@ namespace TorqueCalibrator.wnd
         //最终筛选结果
         private List<Record> befterSeriesNumShowList = new List<Record>();
         private List<Record> afterSeriesNumShowList = new List<Record>();
+        private List<RecordDetail> beforeRecordDetailList;
+        private List<RecordDetail> afterRecordDetailList;
         public RecordWnd()
         {
             InitializeComponent();
@@ -234,15 +236,23 @@ namespace TorqueCalibrator.wnd
                         RecordDetailDgv.Rows[i].Cells["difference"].Value = recordDetailList[i].Difference;
                     }
                 }
-                
-                if (e.ColumnIndex == RecordDgv.Columns["print"].Index && !AllTRCheckBox.Checked)
+                else
                 {
-                    if (MessageBox.Show("confirm print?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    beforeRecordDetailList = recordDetailService.selectListByRecordId(befterSeriesNumShowList[e.RowIndex].Id);
+                    afterRecordDetailList = recordDetailService.selectListByRecordId(afterSeriesNumShowList[e.RowIndex].Id);
+                    befterSeriesNumShowList[e.RowIndex].RecordDetailList = beforeRecordDetailList;
+                    afterSeriesNumShowList[e.RowIndex].RecordDetailList = afterRecordDetailList;
+                    if (e.ColumnIndex == RecordDgv.Columns["print"].Index && !AllTRCheckBox.Checked)
                     {
-                        //executeToExcel(recordList[e.RowIndex]);
-                        executeToWord(befterSeriesNumShowList[e.RowIndex],afterSeriesNumShowList[e.RowIndex]);
+                        if (MessageBox.Show("confirm print?", "提示", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            //executeToExcel(recordList[e.RowIndex]);
+                            executeToWord(befterSeriesNumShowList[e.RowIndex],afterSeriesNumShowList[e.RowIndex]);
+                        }
                     }
                 }
+
+                
 
             }
             catch (Exception exp)
@@ -258,7 +268,7 @@ namespace TorqueCalibrator.wnd
             object oFileName = "";
             try
             { 
-                File.Copy(@"D:\Desktop\扭矩小车项目相关\！！扭矩校验仪上位机\扭矩小车20210409\TorqueCalibrator2021年3月8日081750\TorqueCalibrator\bin\Debug\报告模版\扭力扳手校验记录单(专检）QM1_TCD00000003344_B_20180420_083651_0.doc", Application.StartupPath + @"\test.doc",true);// + DateTime.Now.ToString() + ".doc", true);
+                File.Copy(@"D:\扭力扳手校验记录单(专检）QM1_TCD00000003344_B_20180420_083651_0.doc", Application.StartupPath + @"\test.doc",true);// + DateTime.Now.ToString() + ".doc", true);
             }
             catch(Exception e)
             {
@@ -304,11 +314,12 @@ namespace TorqueCalibrator.wnd
                 if (oDoc.Bookmarks[i].Name.Equals("AfterDate")) oDoc.Bookmarks[i].Range.Text = afterRecord.CreateTime.ToString();
                 if (oDoc.Bookmarks[i].Name.Equals("AfterCheckName")) oDoc.Bookmarks[i].Range.Text = afterRecord.Operator;
                 //if (oDoc.Bookmarks[i].Name.Equals("AfterQSName")) oDoc.Bookmarks[i].Range.Text = afterRecord.ProName;
-                if (oDoc.Bookmarks[i].Name.Equals("AfterConclusion")) oDoc.Bookmarks[i].Range.Text = afterRecord.Result == 1 ? "不合格non-conformity":"合格conformity";
+                if (oDoc.Bookmarks[i].Name.Equals("AfterConclusion")) oDoc.Bookmarks[i].Range.Text = afterRecord.Result == 0 ? "不合格non-conformity":"合格conformity";
             }
             oDoc.PrintOut();
             oDoc.Save();
             oDoc.Close();
+            GC.Collect();
         }
         private void executeToExcel(Record record)
         {
