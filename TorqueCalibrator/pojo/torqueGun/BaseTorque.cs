@@ -84,9 +84,16 @@ namespace TorqueCalibrator.pojo.torqueGun
         /// </summary>
         public void choseSensor(float standard)
         {
+            
             //大于配置文件中的设置值时选择大扭矩，否则选择小扭矩
             int temp = standard > choseSensorEdge ? 2 : 1;
             s7Help.WriteCollectorSelect(temp);
+            if (temp != Vars.CurrentSensor)
+            {
+                Thread.Sleep(30000);
+            }
+            Vars.CurrentSensor = temp;
+            
         }
 
         public void initRecord(int checkMode)

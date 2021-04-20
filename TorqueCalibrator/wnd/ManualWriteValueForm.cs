@@ -65,20 +65,41 @@ namespace TorqueCalibrator.wnd
 
         private void ManualWriteValueForm_KeyDown(object sender, KeyEventArgs e)
         {
-            // 判断输入扭矩值是否合规
-            if (IsFloat(textBox1.Text) || IsInteger(textBox1.Text))
-            {
-                //MessageBox.Show("请输入正确的扭矩值！");
-            }
-            else
-            {
-                MessageBox.Show("请输入正确的扭矩值！");
-                return;
-            }
+           
+            //// 判断输入扭矩值是否合规
+            //if (IsFloat(textBox1.Text) || IsInteger(textBox1.Text))
+            //{
+            //    //MessageBox.Show("请输入正确的扭矩值！");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("请输入正确的扭矩值！");
+            //    return;
+            //}
 
-            Vars.MnualDigitalResult = Regex.Replace(textBox1.Text, "^0*", "");
-            textBox1.Text = "";
-            this.Close();
+            //Vars.MnualDigitalResult = Regex.Replace(textBox1.Text, "^0*", "");
+            //textBox1.Text = "";
+            //this.Close();
+        }
+
+        private void ManualWriteValueForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == 13)
+            {
+                if (IsFloat(textBox1.Text) || IsInteger(textBox1.Text))
+                {
+                    //MessageBox.Show("请输入正确的扭矩值！");
+                }
+                else
+                {
+                    MessageBox.Show("请输入正确的扭矩值！");
+                    return;
+                }
+
+                Vars.MnualDigitalResult = Regex.Replace(textBox1.Text, "^0*", "");
+                textBox1.Text = "";
+                this.Close();
+            }
         }
     }
     

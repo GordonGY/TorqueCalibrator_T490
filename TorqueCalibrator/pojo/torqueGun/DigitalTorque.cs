@@ -30,9 +30,10 @@ namespace TorqueCalibrator.pojo.torqueGun
             //新增
             Action<DataGridView, RecordDetail, float, bool> changeWndDgv1 = new Action<DataGridView, RecordDetail, float, bool>(changeWndDgvText1);
             Action<DataGridView, RecordDetail,  bool> changeWndDgv = new Action<DataGridView, RecordDetail,  bool>(changeWndDgvText);
-            //wnd.Controls["RecordDetailDgv"].Invoke(changeWndDgv, (DataGridView)wnd.Controls["RecordDetailDgv"],null, true);
+
             //清空DataGridView
             DataGridViewClear();
+
             //准备
             this.initRecord(this.CheckMode);
             Vars.Result = "";
@@ -132,7 +133,6 @@ namespace TorqueCalibrator.pojo.torqueGun
                         }
                     }
                     
-
                     //电机停止位置位
                     if (!Vars.ControlMode) s7Help.WriteMotorStop(true);
 

@@ -63,6 +63,7 @@ namespace TorqueCalibrator
             borrowForm.Hide();
             serialScanPort = new ScanSerialPort(this, borrowForm);//扫码枪串口
             this.wnd = wnd;
+            Vars.CurrentSensor = 2;
         }
         private void Form1_Load(object sender, EventArgs e)
         {

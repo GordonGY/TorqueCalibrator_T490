@@ -33,11 +33,12 @@ namespace TorqueCalibrator.pojo.torqueGun
             //按照工艺中规定的进行校验
             for (int i = 0; i < this.CurrentTech.TechnologyDetailList.Count; i++)
             {
-                //将该发送的模式，设置下去，基类中实现
-                this.setMode(serialPort);
 
                 //发送设置校验仪传感器选择位
                 this.choseSensor(this.CurrentTech.TechnologyDetailList[i].Standard);
+
+                //将该发送的模式，设置下去，基类中实现
+                this.setMode(serialPort);
 
                 //试验置位
                 s7Help.WriteTestReadyStart(true);
@@ -94,13 +95,15 @@ namespace TorqueCalibrator.pojo.torqueGun
                     Vars.Result = "";
                     currentRecordDetail.ManualWriteValue = 0;
                     
-                    wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, currentRecordDetail, false);
+                    
                    
                     hybirdLock.Enter();
+                    wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, currentRecordDetail, false);
                     currentRecord.RecordDetailList.Add(currentRecordDetail);
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第"+ (j+1).ToString()+"次试验数据采集完成！");
                     hybirdLock.Leave();
 
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第"+ (j+1).ToString()+"次试验数据采集完成！");
+                    
 
                     Thread.Sleep(200);
 

@@ -71,8 +71,6 @@ namespace TorqueCalibrator.pojo.torqueGun
                                 Vars.Result = "";
                                 continue;
                             }
-                            //返回结果显示
-                            //wnd.Controls["textBox4"].Invoke(changeWndText, (TextBox)wnd.Controls["textBox4"], Vars.Result);
 
                             if (Vars.Result.Length - 4 <0)
                             {
@@ -80,8 +78,13 @@ namespace TorqueCalibrator.pojo.torqueGun
                             }
                             //不带N.m的扭矩值
                             currentRecordDetail.TestValue = float.Parse(Vars.Result.Substring(0, Vars.Result.Length - 4));
+                            
+                            //if((int)MessageBox.Show("请确认电动扭矩枪端是否合格！！！","提示",MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation)!=1){continue;}
+
+
                             //返回当前试验状态，合格，不合格
                             currentRecordDetail.judgeResult();
+                            
                             //前端显示试验结论，并且给到PLC试验过程中的结果，用于亮灯
                             if (currentRecordDetail.Result == 1)
                             {
@@ -90,7 +93,6 @@ namespace TorqueCalibrator.pojo.torqueGun
                             }
                             else
                             {
-                                //wnd.Controls["textBox5"].Invoke(changeWndText, (TextBox)wnd.Controls["textBox5"], "不合格");
                                 s7Help.WriteTestProcessResult(2);
                             }
                             
