@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -84,12 +84,23 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.ManualChoseCB1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.postCheckRbx1 = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.barEditItem5 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -99,15 +110,43 @@
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
+            this.tablePanel1 = new DevExpress.Utils.Layout.TablePanel();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.LeftMotorCleanError = new DevExpress.XtraEditors.SimpleButton();
+            this.LeftMotorEnable = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.RecordDetailDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
             this.sidePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).BeginInit();
+            this.tablePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +154,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(1424, 821);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(164, 29);
             this.textBox1.TabIndex = 0;
@@ -124,7 +163,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(1424, 886);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(164, 29);
             this.textBox2.TabIndex = 0;
@@ -143,7 +182,7 @@
             // seriesNumTbx
             // 
             this.seriesNumTbx.Location = new System.Drawing.Point(114, 5);
-            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(5);
             this.seriesNumTbx.Name = "seriesNumTbx";
             this.seriesNumTbx.Size = new System.Drawing.Size(219, 29);
             this.seriesNumTbx.TabIndex = 0;
@@ -163,6 +202,7 @@
             // 
             // RecordDetailDgv
             // 
+            this.tablePanel1.SetColumn(this.RecordDetailDgv, 0);
             this.RecordDetailDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.RecordDetailDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id2,
@@ -177,13 +217,13 @@
             this.standard,
             this.upper,
             this.lower});
-            this.RecordDetailDgv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RecordDetailDgv.Location = new System.Drawing.Point(0, 46);
-            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RecordDetailDgv.Location = new System.Drawing.Point(5, 8);
+            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(5);
             this.RecordDetailDgv.Name = "RecordDetailDgv";
+            this.tablePanel1.SetRow(this.RecordDetailDgv, 0);
             this.RecordDetailDgv.RowHeadersWidth = 51;
             this.RecordDetailDgv.RowTemplate.Height = 23;
-            this.RecordDetailDgv.Size = new System.Drawing.Size(1190, 423);
+            this.RecordDetailDgv.Size = new System.Drawing.Size(1156, 423);
             this.RecordDetailDgv.TabIndex = 11;
             // 
             // id2
@@ -277,17 +317,19 @@
             // 
             // hintRtbx
             // 
-            this.hintRtbx.Dock = System.Windows.Forms.DockStyle.Right;
+            this.tablePanel1.SetColumn(this.hintRtbx, 1);
             this.hintRtbx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hintRtbx.Location = new System.Drawing.Point(1190, 46);
+            this.hintRtbx.Location = new System.Drawing.Point(1170, 442);
             this.hintRtbx.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.hintRtbx.Name = "hintRtbx";
-            this.hintRtbx.Size = new System.Drawing.Size(476, 879);
+            this.tablePanel1.SetRow(this.hintRtbx, 1);
+            this.hintRtbx.Size = new System.Drawing.Size(492, 435);
             this.hintRtbx.TabIndex = 14;
             this.hintRtbx.Text = "";
             // 
             // techDgv
             // 
+            this.tablePanel1.SetColumn(this.techDgv, 0);
             this.techDgv.ColumnHeadersHeight = 40;
             this.techDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.techDgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -301,13 +343,13 @@
             this.upper1,
             this.lower1});
             this.techDgv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.techDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.techDgv.Location = new System.Drawing.Point(0, 469);
-            this.techDgv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.techDgv.Location = new System.Drawing.Point(5, 445);
+            this.techDgv.Margin = new System.Windows.Forms.Padding(5);
             this.techDgv.Name = "techDgv";
+            this.tablePanel1.SetRow(this.techDgv, 1);
             this.techDgv.RowHeadersWidth = 51;
             this.techDgv.RowTemplate.Height = 23;
-            this.techDgv.Size = new System.Drawing.Size(1190, 456);
+            this.techDgv.Size = new System.Drawing.Size(1156, 429);
             this.techDgv.TabIndex = 16;
             // 
             // checkbox
@@ -336,8 +378,8 @@
             // 
             // ToolName
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ToolName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ToolName.DefaultCellStyle = dataGridViewCellStyle1;
             this.ToolName.HeaderText = "工具名称";
             this.ToolName.MinimumWidth = 6;
             this.ToolName.Name = "ToolName";
@@ -403,7 +445,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(1360, 629);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(5);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(164, 29);
             this.textBox3.TabIndex = 0;
@@ -422,7 +464,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(1424, 688);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(5);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(164, 29);
             this.textBox4.TabIndex = 0;
@@ -430,7 +472,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(1424, 748);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(5);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(164, 29);
             this.textBox5.TabIndex = 0;
@@ -476,10 +518,14 @@
             this.barHeaderItem1,
             this.barButtonItem8,
             this.ManualChoseCB1,
-            this.postCheckRbx1});
+            this.postCheckRbx1,
+            this.barEditItem2,
+            this.barEditItem3,
+            this.barEditItem4,
+            this.barEditItem5});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(11, 15, 11, 15);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 619;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -489,7 +535,11 @@
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1,
             this.repositoryItemHypertextLabel2,
-            this.repositoryItemTimeEdit1});
+            this.repositoryItemTimeEdit1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2,
+            this.repositoryItemTextEdit3,
+            this.repositoryItemTextEdit4});
             this.ribbonControl1.Size = new System.Drawing.Size(1666, 237);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -602,6 +652,54 @@
             this.postCheckRbx1.Id = 20;
             this.postCheckRbx1.Name = "postCheckRbx1";
             // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "左边电机角度";
+            this.barEditItem2.Edit = this.repositoryItemTextEdit1;
+            this.barEditItem2.Id = 23;
+            this.barEditItem2.Name = "barEditItem2";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // barEditItem3
+            // 
+            this.barEditItem3.Caption = "右边电机角度";
+            this.barEditItem3.Edit = this.repositoryItemTextEdit2;
+            this.barEditItem3.Id = 24;
+            this.barEditItem3.Name = "barEditItem3";
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
+            // barEditItem4
+            // 
+            this.barEditItem4.Caption = "左边电机速度";
+            this.barEditItem4.Edit = this.repositoryItemTextEdit3;
+            this.barEditItem4.Id = 27;
+            this.barEditItem4.Name = "barEditItem4";
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
+            // 
+            // barEditItem5
+            // 
+            this.barEditItem5.Caption = "右边电机速度";
+            this.barEditItem5.Edit = this.repositoryItemTextEdit4;
+            this.barEditItem5.Id = 28;
+            this.barEditItem5.Name = "barEditItem5";
+            // 
+            // repositoryItemTextEdit4
+            // 
+            this.repositoryItemTextEdit4.AutoHeight = false;
+            this.repositoryItemTextEdit4.Name = "repositoryItemTextEdit4";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -609,7 +707,10 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
             this.ribbonPageGroup7,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup9,
+            this.ribbonPageGroup10});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "试验";
             // 
@@ -638,6 +739,25 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.ManualChoseCB1);
             this.ribbonPageGroup8.ItemLinks.Add(this.postCheckRbx1);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barEditItem2);
+            this.ribbonPageGroup6.ItemLinks.Add(this.barEditItem3);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "电机实时位置";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barEditItem4);
+            this.ribbonPageGroup9.ItemLinks.Add(this.barEditItem5);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "电机实时速度";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "电机状态";
             // 
             // ribbonPage3
             // 
@@ -679,7 +799,7 @@
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItem1);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 1162);
-            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(9);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(1666, 36);
@@ -691,18 +811,195 @@
             // 
             // sidePanel1
             // 
-            this.sidePanel1.Controls.Add(this.techDgv);
-            this.sidePanel1.Controls.Add(this.RecordDetailDgv);
-            this.sidePanel1.Controls.Add(this.hintRtbx);
+            this.sidePanel1.Controls.Add(this.tablePanel1);
             this.sidePanel1.Controls.Add(this.flowLayoutPanel1);
             this.sidePanel1.Controls.Add(this.navBarControl1);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sidePanel1.Location = new System.Drawing.Point(0, 237);
-            this.sidePanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sidePanel1.Margin = new System.Windows.Forms.Padding(4);
             this.sidePanel1.Name = "sidePanel1";
             this.sidePanel1.Size = new System.Drawing.Size(1666, 925);
             this.sidePanel1.TabIndex = 25;
             this.sidePanel1.Text = "sidePanel1";
+            // 
+            // tablePanel1
+            // 
+            this.tablePanel1.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 70F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 30F)});
+            this.tablePanel1.Controls.Add(this.xtraTabControl1);
+            this.tablePanel1.Controls.Add(this.hintRtbx);
+            this.tablePanel1.Controls.Add(this.RecordDetailDgv);
+            this.tablePanel1.Controls.Add(this.techDgv);
+            this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tablePanel1.Location = new System.Drawing.Point(0, 46);
+            this.tablePanel1.Name = "tablePanel1";
+            this.tablePanel1.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 50F)});
+            this.tablePanel1.Size = new System.Drawing.Size(1666, 879);
+            this.tablePanel1.TabIndex = 21;
+            // 
+            // xtraTabControl1
+            // 
+            this.tablePanel1.SetColumn(this.xtraTabControl1, 1);
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(1169, 3);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.tablePanel1.SetRow(this.xtraTabControl1, 0);
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(494, 434);
+            this.xtraTabControl1.TabIndex = 17;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.LeftMotorEnable);
+            this.xtraTabPage1.Controls.Add(this.labelControl1);
+            this.xtraTabPage1.Controls.Add(this.labelControl6);
+            this.xtraTabPage1.Controls.Add(this.labelControl2);
+            this.xtraTabPage1.Controls.Add(this.labelControl3);
+            this.xtraTabPage1.Controls.Add(this.simpleButton4);
+            this.xtraTabPage1.Controls.Add(this.LeftMotorCleanError);
+            this.xtraTabPage1.Controls.Add(this.simpleButton6);
+            this.xtraTabPage1.Controls.Add(this.labelControl5);
+            this.xtraTabPage1.Controls.Add(this.simpleButton1);
+            this.xtraTabPage1.Controls.Add(this.simpleButton5);
+            this.xtraTabPage1.Controls.Add(this.labelControl4);
+            this.xtraTabPage1.Controls.Add(this.simpleButton7);
+            this.xtraTabPage1.Controls.Add(this.simpleButton2);
+            this.xtraTabPage1.Controls.Add(this.simpleButton3);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(492, 396);
+            this.xtraTabPage1.Text = "左边电机控制";
+            // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Location = new System.Drawing.Point(38, 278);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(114, 34);
+            this.simpleButton7.TabIndex = 20;
+            this.simpleButton7.Text = "位置信息设置";
+            // 
+            // simpleButton6
+            // 
+            this.simpleButton6.Location = new System.Drawing.Point(178, 332);
+            this.simpleButton6.Name = "simpleButton6";
+            this.simpleButton6.Size = new System.Drawing.Size(113, 34);
+            this.simpleButton6.TabIndex = 19;
+            this.simpleButton6.Text = "速度信息设置";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(128, 15);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(108, 22);
+            this.labelControl4.TabIndex = 18;
+            this.labelControl4.Text = "当前位置数据";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(145, 124);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(108, 22);
+            this.labelControl5.TabIndex = 16;
+            this.labelControl5.Text = "当前速度数据";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(145, 175);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(72, 22);
+            this.labelControl3.TabIndex = 14;
+            this.labelControl3.Text = "位置设置";
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(178, 233);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(72, 22);
+            this.labelControl2.TabIndex = 12;
+            this.labelControl2.Text = "速度设置";
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Location = new System.Drawing.Point(38, 335);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(114, 31);
+            this.simpleButton5.TabIndex = 10;
+            this.simpleButton5.Text = "位置模式使能";
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Location = new System.Drawing.Point(38, 167);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(84, 34);
+            this.simpleButton4.TabIndex = 9;
+            this.simpleButton4.Text = "电机重置";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(38, 3);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(84, 34);
+            this.simpleButton3.TabIndex = 8;
+            this.simpleButton3.Text = "电机回零";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(34, 117);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(88, 34);
+            this.simpleButton1.TabIndex = 7;
+            this.simpleButton1.Text = "电机暂停";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(190, 285);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(72, 22);
+            this.labelControl1.TabIndex = 4;
+            this.labelControl1.Text = "速度设置";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(313, 335);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(126, 35);
+            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.Text = "速度模式使能";
+            // 
+            // LeftMotorCleanError
+            // 
+            this.LeftMotorCleanError.Location = new System.Drawing.Point(38, 221);
+            this.LeftMotorCleanError.Name = "LeftMotorCleanError";
+            this.LeftMotorCleanError.Size = new System.Drawing.Size(84, 34);
+            this.LeftMotorCleanError.TabIndex = 1;
+            this.LeftMotorCleanError.Text = "电机清错";
+            // 
+            // LeftMotorEnable
+            // 
+            this.LeftMotorEnable.Location = new System.Drawing.Point(38, 63);
+            this.LeftMotorEnable.Name = "LeftMotorEnable";
+            this.LeftMotorEnable.Size = new System.Drawing.Size(84, 34);
+            this.LeftMotorEnable.TabIndex = 0;
+            this.LeftMotorEnable.Text = "电机使能";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(145, 63);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(108, 22);
+            this.labelControl6.TabIndex = 22;
+            this.labelControl6.Text = "当前速度数据";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(492, 396);
+            this.xtraTabPage2.Text = "右边电机控制";
             // 
             // flowLayoutPanel1
             // 
@@ -710,7 +1007,7 @@
             this.flowLayoutPanel1.Controls.Add(this.seriesNumTbx);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1666, 46);
             this.flowLayoutPanel1.TabIndex = 20;
@@ -718,7 +1015,7 @@
             // navBarControl1
             // 
             this.navBarControl1.Location = new System.Drawing.Point(1315, 609);
-            this.navBarControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navBarControl1.Margin = new System.Windows.Forms.Padding(4);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 175;
             this.navBarControl1.Size = new System.Drawing.Size(175, 367);
@@ -745,7 +1042,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::TorqueCalibrator.Properties.Resources.图标_;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -755,9 +1052,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.techDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
             this.sidePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tablePanel1)).EndInit();
+            this.tablePanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
@@ -839,6 +1146,36 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarToggleSwitchItem ManualChoseCB1;
         private DevExpress.XtraBars.BarToggleSwitchItem postCheckRbx1;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarEditItem barEditItem3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.Utils.Layout.TablePanel tablePanel1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraEditors.SimpleButton simpleButton6;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraBars.BarEditItem barEditItem4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraBars.BarEditItem barEditItem5;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton LeftMotorCleanError;
+        private DevExpress.XtraEditors.SimpleButton LeftMotorEnable;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
 
