@@ -90,7 +90,7 @@ namespace TorqueCalibrator.pojo.torqueGun
             s7Help.WriteCollectorSelect(temp);
             if (temp != Vars.CurrentSensor)
             {
-                Thread.Sleep(30000);
+                Thread.Sleep(10000);
             }
             Vars.CurrentSensor = temp;
             
