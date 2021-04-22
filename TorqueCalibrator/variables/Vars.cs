@@ -16,8 +16,6 @@ namespace TorqueCalibrator.variables
         public static string MnualDigitalResult = "";
         //控制模式
         public static bool ControlMode;//0自动，1手动
-        public static int CurrentSensor;//当前传感器
-        public static int LastSensor;//当前传感器
         public static bool BorrowToolWnd;//界面是否打开
         public static string Result_IDCard;
         public static string Result_PortScan;

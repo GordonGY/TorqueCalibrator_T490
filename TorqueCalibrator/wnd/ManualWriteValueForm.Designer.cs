@@ -37,18 +37,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(204, 90);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Location = new System.Drawing.Point(272, 112);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.Size = new System.Drawing.Size(132, 25);
             this.textBox1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(182, 136);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(243, 170);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
+            this.button1.Size = new System.Drawing.Size(100, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "提交";
             this.button1.UseVisualStyleBackColor = true;
@@ -57,50 +57,46 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(307, 94);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(409, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 12);
+            this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 7;
             this.label3.Text = "N*M";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 66);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(180, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(173, 12);
+            this.label2.Size = new System.Drawing.Size(217, 15);
             this.label2.TabIndex = 6;
             this.label2.Text = "请填完扭矩值后，复位数显扳手";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(110, 94);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(147, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 12);
+            this.label1.Size = new System.Drawing.Size(112, 15);
             this.label1.TabIndex = 5;
             this.label1.Text = "数显扳手扭矩值";
             // 
             // ManualWriteValueForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(462, 210);
+            this.ClientSize = new System.Drawing.Size(616, 262);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ManualWriteValueForm";
             this.Text = "数显扳手扭矩填写";
             this.Load += new System.EventHandler(this.ManualWriteValueForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ManualWriteValueForm_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ManualWriteValueForm_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
