@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +22,7 @@ namespace TorqueCalibrator.pojo.torqueGun
         {
             Action<TextBox, string> changeWndText = new Action<TextBox, string>(changeWndTextBoxText);
             Action<RichTextBox, string> changeWndRich = new Action<RichTextBox, string>(changeWndRichTextBoxText);
+            Action<BarStaticItem, string> changeWndHintItem = new Action<BarStaticItem, string>(changeWndHintItemText);
             Action<DataGridView, RecordDetail, bool> changeWndDgv = new Action<DataGridView, RecordDetail, bool>(changeWndDgvText);
 
             //清空RecordDetailDgv界面
@@ -67,7 +69,6 @@ namespace TorqueCalibrator.pojo.torqueGun
                     //100ms小延时
                     Thread.Sleep(100);
 
-
                     //试验速度模式使能
                     if (!Vars.ControlMode)
                     {
@@ -95,15 +96,11 @@ namespace TorqueCalibrator.pojo.torqueGun
                     Vars.Result = "";
                     currentRecordDetail.ManualWriteValue = 0;
                     
-                    
-                   
                     hybirdLock.Enter();
                     wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, currentRecordDetail, false);
                     currentRecord.RecordDetailList.Add(currentRecordDetail);
                     wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第"+ (j+1).ToString()+"次试验数据采集完成！");
                     hybirdLock.Leave();
-
-                    
 
                     Thread.Sleep(200);
 
@@ -159,6 +156,7 @@ namespace TorqueCalibrator.pojo.torqueGun
             }
             wnd.barButtonItem1.Enabled = true;
         }
+
 
         public void DataGridViewClear()
         {

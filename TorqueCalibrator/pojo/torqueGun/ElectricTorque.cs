@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace TorqueCalibrator.pojo.torqueGun
         {
             Action<TextBox, string> changeWndText = new Action<TextBox, string>(changeWndTextBoxText);
             Action<RichTextBox, string> changeWndRich = new Action<RichTextBox, string>(changeWndRichTextBoxText);
+            Action<BarStaticItem, string> changeWndHintItem = new Action<BarStaticItem, string>(changeWndHintItemText);
             Action<DataGridView, RecordDetail, bool> changeWndDgv = new Action<DataGridView, RecordDetail, bool>(changeWndDgvText);
             //清空RecordDetailDgv界面
             wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, null, true);

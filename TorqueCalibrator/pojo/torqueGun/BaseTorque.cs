@@ -12,6 +12,7 @@ using System.Drawing;
 using TorqueCalibrator.service.record;
 using TorqueCalibrator.service.record.recordImpl;
 using TorqueCalibrator.variables;
+using DevExpress.XtraBars;
 
 namespace TorqueCalibrator.pojo.torqueGun
 {
@@ -140,6 +141,12 @@ namespace TorqueCalibrator.pojo.torqueGun
             rtbx.AppendText(str + System.Environment.NewLine);
             rtbx.ScrollToCaret();
         }
+        //改变HintIteam内容
+        public void changeWndHintItemText(BarStaticItem rtbx, string str)
+        {
+           rtbx.Caption = str;
+        }
+
         /// <summary>
         /// 更新MAIN中的datagridview
         /// </summary>

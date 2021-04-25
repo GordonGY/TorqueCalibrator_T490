@@ -333,8 +333,6 @@ namespace TorqueCalibrator
                     //打开试验使能
                     barButtonItem1.Enabled = true;
                     MessageBox.Show("请扫描或输入工具编号");
-                    
-                    
                     return;
                 }
 

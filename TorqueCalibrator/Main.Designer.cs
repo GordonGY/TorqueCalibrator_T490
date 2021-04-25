@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -84,45 +84,53 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.ManualChoseCB1 = new DevExpress.XtraBars.BarToggleSwitchItem();
             this.postCheckRbx1 = new DevExpress.XtraBars.BarToggleSwitchItem();
+            this.RightMotorPosition = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.LeftMotorPosition = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.HintIteam = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemHypertextLabel1 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
             this.repositoryItemTimeEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTimeEdit();
+            this.repositoryItemHypertextLabel3 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
+            this.repositoryItemHypertextLabel4 = new DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RightMotorPosition = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.LeftMotorPosition = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.RecordDetailDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             this.sidePanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(1139, 672);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(132, 26);
             this.textBox1.TabIndex = 0;
@@ -131,7 +139,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(1139, 725);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 26);
             this.textBox2.TabIndex = 0;
@@ -150,7 +158,7 @@
             // seriesNumTbx
             // 
             this.seriesNumTbx.Location = new System.Drawing.Point(98, 4);
-            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(4);
             this.seriesNumTbx.Name = "seriesNumTbx";
             this.seriesNumTbx.Size = new System.Drawing.Size(176, 26);
             this.seriesNumTbx.TabIndex = 0;
@@ -185,7 +193,7 @@
             this.lower});
             this.RecordDetailDgv.Dock = System.Windows.Forms.DockStyle.Top;
             this.RecordDetailDgv.Location = new System.Drawing.Point(0, 38);
-            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(4);
             this.RecordDetailDgv.Name = "RecordDetailDgv";
             this.RecordDetailDgv.RowHeadersWidth = 51;
             this.RecordDetailDgv.RowTemplate.Height = 23;
@@ -309,7 +317,7 @@
             this.techDgv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.techDgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.techDgv.Location = new System.Drawing.Point(0, 384);
-            this.techDgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.techDgv.Margin = new System.Windows.Forms.Padding(4);
             this.techDgv.Name = "techDgv";
             this.techDgv.RowHeadersWidth = 51;
             this.techDgv.RowTemplate.Height = 23;
@@ -342,8 +350,8 @@
             // 
             // ToolName
             // 
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ToolName.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ToolName.DefaultCellStyle = dataGridViewCellStyle2;
             this.ToolName.HeaderText = "工具名称";
             this.ToolName.MinimumWidth = 6;
             this.ToolName.Name = "ToolName";
@@ -407,7 +415,7 @@
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(1088, 515);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(132, 26);
             this.textBox3.TabIndex = 0;
@@ -425,7 +433,7 @@
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(1139, 563);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(132, 26);
             this.textBox4.TabIndex = 0;
@@ -433,7 +441,7 @@
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(1139, 612);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(132, 26);
             this.textBox5.TabIndex = 0;
@@ -479,10 +487,11 @@
             this.ManualChoseCB1,
             this.postCheckRbx1,
             this.RightMotorPosition,
-            this.LeftMotorPosition});
+            this.LeftMotorPosition,
+            this.HintIteam});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -494,7 +503,10 @@
             this.repositoryItemHypertextLabel2,
             this.repositoryItemTimeEdit1,
             this.repositoryItemTextEdit1,
-            this.repositoryItemTextEdit2});
+            this.repositoryItemTextEdit2,
+            this.repositoryItemHypertextLabel3,
+            this.repositoryItemHypertextLabel4,
+            this.repositoryItemMemoEdit1});
             this.ribbonControl1.Size = new System.Drawing.Size(1333, 197);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
@@ -607,6 +619,40 @@
             this.postCheckRbx1.Id = 20;
             this.postCheckRbx1.Name = "postCheckRbx1";
             // 
+            // RightMotorPosition
+            // 
+            this.RightMotorPosition.Caption = "左边电机实时位置";
+            this.RightMotorPosition.Edit = this.repositoryItemTextEdit1;
+            this.RightMotorPosition.Id = 23;
+            this.RightMotorPosition.Name = "RightMotorPosition";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // LeftMotorPosition
+            // 
+            this.LeftMotorPosition.Caption = "右边电机实时位置";
+            this.LeftMotorPosition.Edit = this.repositoryItemTextEdit2;
+            this.LeftMotorPosition.Id = 24;
+            this.LeftMotorPosition.Name = "LeftMotorPosition";
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
+            // HintIteam
+            // 
+            this.HintIteam.Caption = "提示";
+            this.HintIteam.Id = 28;
+            this.HintIteam.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.HintIteam.ItemAppearance.Disabled.Options.UseFont = true;
+            this.HintIteam.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.HintIteam.ItemAppearance.Normal.Options.UseFont = true;
+            this.HintIteam.Name = "HintIteam";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -615,7 +661,8 @@
             this.ribbonPageGroup3,
             this.ribbonPageGroup7,
             this.ribbonPageGroup8,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup6,
+            this.ribbonPageGroup9});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "试验";
             // 
@@ -644,6 +691,21 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.ManualChoseCB1);
             this.ribbonPageGroup8.ItemLinks.Add(this.postCheckRbx1);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.RightMotorPosition);
+            this.ribbonPageGroup6.ItemLinks.Add(this.LeftMotorPosition);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "电机实时位置显示";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.Alignment = DevExpress.XtraBars.Ribbon.RibbonPageGroupAlignment.Far;
+            this.ribbonPageGroup9.ItemLinks.Add(this.HintIteam);
+            this.ribbonPageGroup9.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.ThreeRows;
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "试验运行提示";
             // 
             // ribbonPage3
             // 
@@ -680,12 +742,24 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemTimeEdit1.Name = "repositoryItemTimeEdit1";
             // 
+            // repositoryItemHypertextLabel3
+            // 
+            this.repositoryItemHypertextLabel3.Name = "repositoryItemHypertextLabel3";
+            // 
+            // repositoryItemHypertextLabel4
+            // 
+            this.repositoryItemHypertextLabel4.Name = "repositoryItemHypertextLabel4";
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
             // ribbonStatusBar1
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItem1);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 871);
-            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(7);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
             this.ribbonStatusBar1.Size = new System.Drawing.Size(1333, 30);
@@ -728,37 +802,6 @@
             this.navBarControl1.TabIndex = 18;
             this.navBarControl1.Text = "navBarControl1";
             // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.RightMotorPosition);
-            this.ribbonPageGroup6.ItemLinks.Add(this.LeftMotorPosition);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "电机实时位置显示";
-            // 
-            // RightMotorPosition
-            // 
-            this.RightMotorPosition.Caption = "左边电机实时位置";
-            this.RightMotorPosition.Edit = this.repositoryItemTextEdit1;
-            this.RightMotorPosition.Id = 23;
-            this.RightMotorPosition.Name = "RightMotorPosition";
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // LeftMotorPosition
-            // 
-            this.LeftMotorPosition.Caption = "右边电机实时位置";
-            this.LeftMotorPosition.Edit = this.repositoryItemTextEdit2;
-            this.LeftMotorPosition.Id = 24;
-            this.LeftMotorPosition.Name = "LeftMotorPosition";
-            // 
-            // repositoryItemTextEdit2
-            // 
-            this.repositoryItemTextEdit2.AutoHeight = false;
-            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -779,7 +822,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::TorqueCalibrator.Properties.Resources.图标_;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -789,14 +832,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.techDgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemHypertextLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             this.sidePanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -880,6 +926,11 @@
         private DevExpress.XtraBars.BarEditItem LeftMotorPosition;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        public DevExpress.XtraBars.BarStaticItem HintIteam;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel3;
+        private DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel repositoryItemHypertextLabel4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
     }
 }
 

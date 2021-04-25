@@ -79,7 +79,7 @@ namespace TorqueCalibrator.untils
         public void WriteTestReadyStart(bool b)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["TestReadyStartAddress"].ToString(), b);
-            export("试验置位");
+            export("试验准备置位！");
         }
 
         //试验结束
@@ -92,7 +92,7 @@ namespace TorqueCalibrator.untils
         public void WriteTestStart(bool b)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["TestStartAddress"].ToString(), b);
-            export("开始");
+            export("试验开始置位！");
         }
 
         ////试验结束
@@ -105,14 +105,14 @@ namespace TorqueCalibrator.untils
         public void WriteTestMode(int i)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["TestModeAddress"].ToString(), i);
-            export("设置测试模式-----" + i);
+            export("已设置测试模式：" + i);
         }
 
         //试验采集器选择
         public void WriteCollectorSelect(int i)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["CollectorSelectAddress"].ToString(), i);
-            export("传感器选择-----" + i);
+            export("已选择传感器：" + i);
         }
 
         ////电机选择
@@ -132,7 +132,7 @@ namespace TorqueCalibrator.untils
         public void WriteMotorStartVSpeed(float f)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["MotorStartVSpeedAddress"].ToString(), f);
-            export("电机速度设置-------"+f);
+            export("电机速度设置为："+f);
         }
 
         //电机相对位移模式开始
@@ -163,7 +163,7 @@ namespace TorqueCalibrator.untils
         public void WriteMotorStop(bool b)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["MotorStopAddress"].ToString(), b);
-            export("电机停止");
+            export("电机暂停置位");
         }
 
         //电机停止完成
@@ -177,14 +177,14 @@ namespace TorqueCalibrator.untils
         public void WriteMotorToZero(bool b)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["MotorToZeroAddress"].ToString(), b);
-            export("电机回零使能");
+            export("电机回零使能置位！");
         }
 
         //电机回零速度
         public void WriteMotorToZeroSpeed(float f)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["MotorToZeroSpeedAddress"].ToString(), f);
-            export("电机回零速度设置-------" + f);
+            export("电机回零速度设置：" + f);
         }
 
         //电机回零完成
@@ -206,7 +206,7 @@ namespace TorqueCalibrator.untils
         public void WriteTestEnd(bool b)
         {
             siemensTcpNet.Write(ConfigurationManager.AppSettings["TestEndAddress"].ToString(), b);
-            export("试验结束，plc重置");
+            export("试验结束，PLC已重置！");
 
         }
         //传输每步的试验结果
