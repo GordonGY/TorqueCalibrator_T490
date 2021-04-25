@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -350,8 +350,8 @@
             // 
             // ToolName
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ToolName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ToolName.DefaultCellStyle = dataGridViewCellStyle1;
             this.ToolName.HeaderText = "工具名称";
             this.ToolName.MinimumWidth = 6;
             this.ToolName.Name = "ToolName";
@@ -623,6 +623,7 @@
             // 
             this.RightMotorPosition.Caption = "左边电机实时位置";
             this.RightMotorPosition.Edit = this.repositoryItemTextEdit1;
+            this.RightMotorPosition.EditWidth = 80;
             this.RightMotorPosition.Id = 23;
             this.RightMotorPosition.Name = "RightMotorPosition";
             // 
@@ -635,6 +636,7 @@
             // 
             this.LeftMotorPosition.Caption = "右边电机实时位置";
             this.LeftMotorPosition.Edit = this.repositoryItemTextEdit2;
+            this.LeftMotorPosition.EditWidth = 80;
             this.LeftMotorPosition.Id = 24;
             this.LeftMotorPosition.Name = "LeftMotorPosition";
             // 
@@ -650,7 +652,9 @@
             this.HintIteam.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 11F);
             this.HintIteam.ItemAppearance.Disabled.Options.UseFont = true;
             this.HintIteam.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.HintIteam.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Red;
             this.HintIteam.ItemAppearance.Normal.Options.UseFont = true;
+            this.HintIteam.ItemAppearance.Normal.Options.UseForeColor = true;
             this.HintIteam.Name = "HintIteam";
             // 
             // ribbonPage1
@@ -705,7 +709,6 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.HintIteam);
             this.ribbonPageGroup9.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.ThreeRows;
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "试验运行提示";
             // 
             // ribbonPage3
             // 

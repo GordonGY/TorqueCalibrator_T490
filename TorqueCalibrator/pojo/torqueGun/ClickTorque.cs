@@ -64,7 +64,7 @@ namespace TorqueCalibrator.pojo.torqueGun
                     this.initRecordDetail(this.CurrentTech.TechnologyDetailList[i]);
 
                     //试验速度模式速度下发
-                    s7Help.WriteMotorStartVSpeed(this.speed);
+                    if (!Vars.ControlMode) s7Help.WriteMotorStartVSpeed(this.speed);
 
                     //100ms小延时
                     Thread.Sleep(100);
@@ -73,9 +73,17 @@ namespace TorqueCalibrator.pojo.torqueGun
                     if (!Vars.ControlMode)
                     {
                         s7Help.WriteMotorStartV(true);
-                        wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验,电机开始运动！");
+                        wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验，电机开始运动！");
+                        wnd.HintIteam.Caption = "第" + (j + 1).ToString() + "次试验，电机开始运动！";
                     }
-                    
+
+                    //手动模式提示
+                    if (Vars.ControlMode)
+                    {
+                        wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "请进行"+ "第" + (j + 1).ToString() + "次试验！");
+                        wnd.HintIteam.Caption = "请进行" + "第" + (j + 1).ToString() + "次试验！";
+                    }
+
                     //数据采集，完成后停止
                     while (true)
                     {
@@ -99,7 +107,8 @@ namespace TorqueCalibrator.pojo.torqueGun
                     hybirdLock.Enter();
                     wnd.RecordDetailDgv.Invoke(changeWndDgv, wnd.RecordDetailDgv, currentRecordDetail, false);
                     currentRecord.RecordDetailList.Add(currentRecordDetail);
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第"+ (j+1).ToString()+"次试验数据采集完成！");
+                    //手动模式提示
+                    if (Vars.ControlMode) wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第"+ (j+1).ToString()+"次试验，数据采集完成！");
                     hybirdLock.Leave();
 
                     Thread.Sleep(200);
@@ -113,8 +122,11 @@ namespace TorqueCalibrator.pojo.torqueGun
                         }
                         Thread.Sleep(100);
                     }
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验,电机停止运动！");
-
+                    if (!Vars.ControlMode)
+                    {
+                        wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验，电机停止运动！");
+                        wnd.HintIteam.Caption = "第" + (j + 1).ToString() + "次试验，电机停止运动！";
+                    }
                     //电机回零速度设置
                     if (!Vars.ControlMode) s7Help.WriteMotorToZeroSpeed(toZeroSpeed);
                     Thread.Sleep(100);
@@ -131,7 +143,12 @@ namespace TorqueCalibrator.pojo.torqueGun
                         }
                         Thread.Sleep(100);
                     }
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验，电机已回零！");
+                    if (!Vars.ControlMode)
+                    {
+                        wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验，电机已回零！");
+                        wnd.HintIteam.Caption = "第" + (j + 1).ToString() + "次试验，电机已回零！";
+                    } 
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "----------");
                 }
                 //试验完成后置位试验结束
                 s7Help.WriteTestEnd(true);
@@ -141,10 +158,16 @@ namespace TorqueCalibrator.pojo.torqueGun
 
             //打开开始试验按钮使能
             OpenStartButtonEnable();
+
             wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "本次试验已完成！");
-            wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "-----------------------");
-            //本地试验完成
-            MessageBox.Show("本次试验完成！");
+            wnd.HintIteam.Caption = "本次试验已完成！";
+            wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "----------------------------------------------");
+            
+            //本次试验完成
+            MessageBox.Show("本次试验完成！", "试验提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            wnd.HintIteam.Caption = "等待试验！";
+
         }
         //打开开始试验按钮使能
         private void OpenStartButtonEnable()

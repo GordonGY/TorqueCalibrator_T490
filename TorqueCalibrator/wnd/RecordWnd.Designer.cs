@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecordWnd));
             this.queryBtn = new System.Windows.Forms.Button();
             this.productCbx = new System.Windows.Forms.ComboBox();
             this.productLab = new System.Windows.Forms.Label();
@@ -65,10 +66,9 @@
             // 
             // queryBtn
             // 
-            this.queryBtn.Location = new System.Drawing.Point(957, 11);
-            this.queryBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.queryBtn.Location = new System.Drawing.Point(831, 11);
             this.queryBtn.Name = "queryBtn";
-            this.queryBtn.Size = new System.Drawing.Size(112, 35);
+            this.queryBtn.Size = new System.Drawing.Size(75, 23);
             this.queryBtn.TabIndex = 0;
             this.queryBtn.Text = "查询";
             this.queryBtn.UseVisualStyleBackColor = true;
@@ -77,10 +77,9 @@
             // productCbx
             // 
             this.productCbx.FormattingEnabled = true;
-            this.productCbx.Location = new System.Drawing.Point(352, 54);
-            this.productCbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.productCbx.Location = new System.Drawing.Point(235, 36);
             this.productCbx.Name = "productCbx";
-            this.productCbx.Size = new System.Drawing.Size(148, 26);
+            this.productCbx.Size = new System.Drawing.Size(100, 20);
             this.productCbx.TabIndex = 7;
             this.productCbx.Visible = false;
             this.productCbx.SelectedIndexChanged += new System.EventHandler(this.productCbx_SelectedIndexChanged);
@@ -88,10 +87,9 @@
             // productLab
             // 
             this.productLab.AutoSize = true;
-            this.productLab.Location = new System.Drawing.Point(270, 62);
-            this.productLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.productLab.Location = new System.Drawing.Point(180, 41);
             this.productLab.Name = "productLab";
-            this.productLab.Size = new System.Drawing.Size(80, 18);
+            this.productLab.Size = new System.Drawing.Size(53, 12);
             this.productLab.TabIndex = 8;
             this.productLab.Text = "扳手型号";
             this.productLab.Visible = false;
@@ -99,19 +97,17 @@
             // seriesNumLab
             // 
             this.seriesNumLab.AutoSize = true;
-            this.seriesNumLab.Location = new System.Drawing.Point(17, 25);
-            this.seriesNumLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.seriesNumLab.Location = new System.Drawing.Point(11, 17);
             this.seriesNumLab.Name = "seriesNumLab";
-            this.seriesNumLab.Size = new System.Drawing.Size(80, 18);
+            this.seriesNumLab.Size = new System.Drawing.Size(53, 12);
             this.seriesNumLab.TabIndex = 8;
             this.seriesNumLab.Text = "扳手条码";
             // 
             // seriesNumTbx
             // 
-            this.seriesNumTbx.Location = new System.Drawing.Point(105, 17);
-            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.seriesNumTbx.Location = new System.Drawing.Point(70, 11);
             this.seriesNumTbx.Name = "seriesNumTbx";
-            this.seriesNumTbx.Size = new System.Drawing.Size(148, 28);
+            this.seriesNumTbx.Size = new System.Drawing.Size(100, 21);
             this.seriesNumTbx.TabIndex = 9;
             // 
             // RecordDgv
@@ -128,12 +124,11 @@
             this.createTime,
             this.print});
             this.RecordDgv.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RecordDgv.Location = new System.Drawing.Point(12, 98);
-            this.RecordDgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RecordDgv.Location = new System.Drawing.Point(8, 65);
             this.RecordDgv.Name = "RecordDgv";
             this.RecordDgv.RowHeadersWidth = 51;
             this.RecordDgv.RowTemplate.Height = 23;
-            this.RecordDgv.Size = new System.Drawing.Size(1119, 185);
+            this.RecordDgv.Size = new System.Drawing.Size(1005, 287);
             this.RecordDgv.TabIndex = 10;
             this.RecordDgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RecordDgv_CellClick);
             this.RecordDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RecordDgv_CellContentClick);
@@ -205,10 +200,9 @@
             // 
             // printBtn
             // 
-            this.printBtn.Location = new System.Drawing.Point(957, 54);
-            this.printBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.printBtn.Location = new System.Drawing.Point(938, 11);
             this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(112, 35);
+            this.printBtn.Size = new System.Drawing.Size(75, 23);
             this.printBtn.TabIndex = 0;
             this.printBtn.Text = "打印";
             this.printBtn.UseVisualStyleBackColor = true;
@@ -217,19 +211,17 @@
             // startDtp
             // 
             this.startDtp.CustomFormat = "yyyy-MM-dd";
-            this.startDtp.Location = new System.Drawing.Point(530, 17);
-            this.startDtp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.startDtp.Location = new System.Drawing.Point(353, 11);
             this.startDtp.Name = "startDtp";
-            this.startDtp.Size = new System.Drawing.Size(183, 28);
+            this.startDtp.Size = new System.Drawing.Size(123, 21);
             this.startDtp.TabIndex = 11;
             // 
             // endDtp
             // 
             this.endDtp.CustomFormat = "yyyy-MM-dd";
-            this.endDtp.Location = new System.Drawing.Point(737, 17);
-            this.endDtp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.endDtp.Location = new System.Drawing.Point(529, 11);
             this.endDtp.Name = "endDtp";
-            this.endDtp.Size = new System.Drawing.Size(183, 28);
+            this.endDtp.Size = new System.Drawing.Size(123, 21);
             this.endDtp.TabIndex = 11;
             // 
             // RecordDetailDgv
@@ -245,12 +237,11 @@
             this.standard,
             this.upper,
             this.lower});
-            this.RecordDetailDgv.Location = new System.Drawing.Point(12, 293);
-            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RecordDetailDgv.Location = new System.Drawing.Point(8, 358);
             this.RecordDetailDgv.Name = "RecordDetailDgv";
             this.RecordDetailDgv.RowHeadersWidth = 51;
             this.RecordDetailDgv.RowTemplate.Height = 23;
-            this.RecordDetailDgv.Size = new System.Drawing.Size(1119, 349);
+            this.RecordDetailDgv.Size = new System.Drawing.Size(1005, 184);
             this.RecordDetailDgv.TabIndex = 10;
             // 
             // id2
@@ -320,37 +311,36 @@
             // userCbx
             // 
             this.userCbx.FormattingEnabled = true;
-            this.userCbx.Location = new System.Drawing.Point(352, 17);
-            this.userCbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userCbx.Location = new System.Drawing.Point(235, 11);
             this.userCbx.Name = "userCbx";
-            this.userCbx.Size = new System.Drawing.Size(148, 26);
+            this.userCbx.Size = new System.Drawing.Size(100, 20);
             this.userCbx.TabIndex = 7;
             // 
             // userLab
             // 
             this.userLab.AutoSize = true;
-            this.userLab.Location = new System.Drawing.Point(287, 23);
-            this.userLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userLab.Location = new System.Drawing.Point(191, 15);
             this.userLab.Name = "userLab";
-            this.userLab.Size = new System.Drawing.Size(62, 18);
+            this.userLab.Size = new System.Drawing.Size(41, 12);
             this.userLab.TabIndex = 8;
             this.userLab.Text = "试验人";
             // 
             // AllTRCheckBox
             // 
             this.AllTRCheckBox.AutoSize = true;
-            this.AllTRCheckBox.Location = new System.Drawing.Point(779, 61);
+            this.AllTRCheckBox.Location = new System.Drawing.Point(706, 13);
+            this.AllTRCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.AllTRCheckBox.Name = "AllTRCheckBox";
-            this.AllTRCheckBox.Size = new System.Drawing.Size(106, 22);
+            this.AllTRCheckBox.Size = new System.Drawing.Size(72, 16);
             this.AllTRCheckBox.TabIndex = 12;
             this.AllTRCheckBox.Text = "所有结果";
             this.AllTRCheckBox.UseVisualStyleBackColor = true;
             // 
             // RecordWnd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 689);
+            this.ClientSize = new System.Drawing.Size(1053, 554);
             this.Controls.Add(this.AllTRCheckBox);
             this.Controls.Add(this.endDtp);
             this.Controls.Add(this.startDtp);
@@ -364,8 +354,9 @@
             this.Controls.Add(this.productCbx);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.queryBtn);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RecordWnd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "记录查询";
             this.Load += new System.EventHandler(this.RecordWnd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RecordDgv)).EndInit();

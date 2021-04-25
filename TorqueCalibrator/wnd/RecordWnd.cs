@@ -118,7 +118,7 @@ namespace TorqueCalibrator.wnd
                 }
 
                 //找到时间最近的一条
-                for (DateTime dateTime = sTime; dateTime.Date < eTime.Date; dateTime = dateTime.AddDays(1))
+                for (DateTime dateTime = sTime; dateTime.Date <= eTime.Date; dateTime = dateTime.AddDays(1))
                 {
                     beforeMaxIndex = -1;
                     afterMaxIndex = -1;
@@ -304,7 +304,7 @@ namespace TorqueCalibrator.wnd
                     if (oDoc.Bookmarks[i].Name.Equals("TestData2")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[1].TestValue.ToString();
                     if (oDoc.Bookmarks[i].Name.Equals("TestData3")) oDoc.Bookmarks[i].Range.Text = beforeRecord.RecordDetailList[2].TestValue.ToString();
                 }            
-                if (oDoc.Bookmarks[i].Name.Equals("Conclusion")) oDoc.Bookmarks[i].Range.Text = beforeRecord.Result == 1 ? "不合格non-conformity":"合格conformity";
+                if (oDoc.Bookmarks[i].Name.Equals("Conclusion")) oDoc.Bookmarks[i].Range.Text = beforeRecord.Result == 0 ? "不合格non-conformity":"合格conformity";
                 if (oDoc.Bookmarks[i].Name.Equals("CheckName")) oDoc.Bookmarks[i].Range.Text = beforeRecord.Operator.ToString();
                 //if (oDoc.Bookmarks[i].Name.Equals("QSName")) oDoc.Bookmarks[i].Range.Text = record.ProName;
 
@@ -316,10 +316,17 @@ namespace TorqueCalibrator.wnd
                 //if (oDoc.Bookmarks[i].Name.Equals("AfterQSName")) oDoc.Bookmarks[i].Range.Text = afterRecord.ProName;
                 if (oDoc.Bookmarks[i].Name.Equals("AfterConclusion")) oDoc.Bookmarks[i].Range.Text = afterRecord.Result == 0 ? "不合格non-conformity":"合格conformity";
             }
-            oDoc.PrintOut();
+            //oDoc.PrintOut();
+
+            //oDoc.SaveAs2(Application.StartupPath + @"\test.doc", ref oMissing, ref oMissing);
+            //保存
             oDoc.Save();
+            //打印
+            //oDoc.PrintOut();
             oDoc.Close();
-            GC.Collect();
+            oWord.Application.Quit();
+
+            //GC.Collect();
         }
         private void executeToExcel(Record record)
         {

@@ -89,7 +89,9 @@ namespace TorqueCalibrator.wnd
                 seriesNumTbx.Text,
                 P_Con_User.CurrentUser.User_name,
                 0));
-            borrowLab.Text = "工具" + seriesNumTbx.Text + "借出成功";
+            MessageBox.Show("工具：" + seriesNumTbx.Text + "借出成功！", "借出提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            //MessageBox.Show("工具:" + seriesNumTbx.Text + "借出成功!");
+            //borrowLab.Text = "工具" + seriesNumTbx.Text + "借出成功";
         }
         private void return_Click(object sender, EventArgs e)
         {
@@ -112,7 +114,8 @@ namespace TorqueCalibrator.wnd
                 MessageBox.Show("此工具未被借出，无法归还");
                 return;
             }
-            borrowLab.Text = "工具" + seriesNumTbx.Text + "归还成功";
+            MessageBox.Show("工具：" + seriesNumTbx.Text + "归还成功！", "归还提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            //borrowLab.Text = "工具" + seriesNumTbx.Text + "归还成功";
         }
         private void button1_Click(object sender, EventArgs e)
         {

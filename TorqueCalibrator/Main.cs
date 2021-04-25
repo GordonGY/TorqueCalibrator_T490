@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
@@ -67,6 +68,7 @@ namespace TorqueCalibrator
             serialScanPort = new ScanSerialPort(this, borrowForm);//扫码枪串口
             this.wnd = wnd;
             Vars.CurrentSensor = 2;
+            //Vars.TestModeLog = ConfigurationManager.ConnectionStrings["TestModeLog"].ToString();
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -83,7 +85,8 @@ namespace TorqueCalibrator
             this.Text = "欢迎使用扭矩校验系统，当前登录: " + P_Con_User.CurrentUser.User_name;
             this.barStaticItem1.Caption = DateTime.Now.Date.ToString("yyyy年MM月dd日");
             techDgv.Visible = false;
-            
+            //读取
+            Vars.TestModeLog = ConfigurationManager.AppSettings["TestModeLog"].ToString(); 
             //PLC连接
             string strMsg;
             s7help = new S7Help(this);
@@ -93,6 +96,7 @@ namespace TorqueCalibrator
             //开启读取读取电机参数线程
             motorReadThread  = new Thread(ReadMotorValue);
             motorReadThread.Start();
+
         }
         #endregion
         
@@ -104,14 +108,14 @@ namespace TorqueCalibrator
             while(true)
             {
                 Thread.Sleep(1000);
-                RightMotorPosition.EditValue =  s7help.ReadPLCLeftMotorPositon();
+                RightMotorPosition.EditValue = (float)Math.Round((double)s7help.ReadPLCLeftMotorPositon(), 3);
                 if(s7help.ReadPLCRightMotorPositon() >180)
                 {
-                    LeftMotorPosition.EditValue = s7help.ReadPLCRightMotorPositon() - 360;
+                    LeftMotorPosition.EditValue = (float)Math.Round((double)(s7help.ReadPLCRightMotorPositon() - 360), 3);
                 }
                 else
                 {
-                    LeftMotorPosition.EditValue =  s7help.ReadPLCRightMotorPositon();
+                    LeftMotorPosition.EditValue = (float)Math.Round((double)s7help.ReadPLCRightMotorPositon(), 3); 
                 }
 
             }
@@ -208,7 +212,7 @@ namespace TorqueCalibrator
         {
             try
             {
-                addCommonHintMessage("-----------------------");
+                addCommonHintMessage("----------------------------------------------");
                 addCommonHintMessage("开始");
 
                 if (seriesNumTbx.Text == "")
@@ -320,7 +324,7 @@ namespace TorqueCalibrator
             catch (Exception ex)
             {
                 addErrorHintMessage("测试异常终止,原因:" + ex.Message);
-                addCommonHintMessage("-----------------------");
+                addCommonHintMessage("----------------------------------------------");
                 return;
             }
 
@@ -332,7 +336,7 @@ namespace TorqueCalibrator
             
             try
             {
-                addCommonHintMessage("-----------------------");
+                addCommonHintMessage("----------------------------------------------");
                 addCommonHintMessage("试验开始");
                 
                 //关闭按钮使能
@@ -341,7 +345,7 @@ namespace TorqueCalibrator
                 if (seriesNumTbx.Text == "")
                 {
                     addCommonHintMessage("未扫描或输入工具编号，试验结束！");
-                    addCommonHintMessage("-----------------------");
+                    addCommonHintMessage("----------------------------------------------");
                     //打开试验使能
                     barButtonItem1.Enabled = true;
                     MessageBox.Show("请扫描或输入工具编号");
@@ -355,7 +359,7 @@ namespace TorqueCalibrator
                 if (product == null)
                 {
                     addCommonHintMessage("不存在该型号的测试大纲，请联系管理员进行添加，试验结束！");
-                    addCommonHintMessage("-----------------------");
+                    addCommonHintMessage("----------------------------------------------");
                     MessageBox.Show("不存在该型号的测试大纲，请联系管理员进行添加");
                     return;
                 }
@@ -363,7 +367,7 @@ namespace TorqueCalibrator
                 if(!s7help.ReadPLCStatus())
                 {
                     addCommonHintMessage("试验台未初始化完毕，试验结束！");
-                    addCommonHintMessage("-----------------------");
+                    addCommonHintMessage("----------------------------------------------");
                     MessageBox.Show("请等待试验台初始化完成后开始试验！");
                     return;
                 }
@@ -441,7 +445,7 @@ namespace TorqueCalibrator
             catch (Exception ex)
             {
                 addErrorHintMessage("测试异常终止,原因:" + ex.Message);
-                addCommonHintMessage("-----------------------");
+                addCommonHintMessage("----------------------------------------------");
                 return;
             }
          }

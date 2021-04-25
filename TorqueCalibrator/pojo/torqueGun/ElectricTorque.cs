@@ -34,12 +34,12 @@ namespace TorqueCalibrator.pojo.torqueGun
             //按照工艺中规定的进行校验（换传感器情况未考虑）
             for (int i = 0; i < this.CurrentTech.TechnologyDetailList.Count; i++)
             {
+                //发送设置校验仪传感器选择位
+                this.choseSensor(this.CurrentTech.TechnologyDetailList[i].Standard);
+                
                 //将该发送的模式，设置下去，基类中实现
                 this.setMode(serialPort);
                 
-                //发送设置校验仪传感器选择位
-                this.choseSensor(this.CurrentTech.TechnologyDetailList[i].Standard);
-
                 //试验置位
                 s7Help.WriteTestReadyStart(true);
 
@@ -61,6 +61,9 @@ namespace TorqueCalibrator.pojo.torqueGun
                 {
                     //生成recordDetail
                     this.initRecordDetail(this.CurrentTech.TechnologyDetailList[i]);
+
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "正使用电动扳手进行第" + (j + 1).ToString() + "次打扭矩！");
+                    wnd.HintIteam.Caption = "请使用电动扳手进行第"+ (j + 1).ToString() + "次打扭矩！";
 
                     //数据采集，完成后停止
                     while (true)
@@ -113,7 +116,9 @@ namespace TorqueCalibrator.pojo.torqueGun
 
                     currentRecord.RecordDetailList.Add(currentRecordDetail);
 
-                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "采集完成++++++");
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "第" + (j + 1).ToString() + "次试验，数据采集完成！");
+                    wnd.HintIteam.Caption = "第" + (j + 1).ToString() + "次试验，数据采集完成！";
+                    wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "----------");
                 }
                 //试验完成后置位试验结束
                 s7Help.WriteTestEnd(true);
@@ -122,8 +127,15 @@ namespace TorqueCalibrator.pojo.torqueGun
             saveRecord();
             //打开开始试验按钮使能
             OpenStartButtonEnable();
-            //本地试验完成
-            MessageBox.Show("本次试验完成！");
+
+            wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "本次试验已完成！");
+            wnd.HintIteam.Caption = "本次试验已完成！";
+            wnd.hintRtbx.Invoke(changeWndRich, wnd.hintRtbx, "----------------------------------------------");
+
+            //本次试验完成
+            MessageBox.Show("本次试验完成！", "试验提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+            wnd.HintIteam.Caption = "等待试验！";
         }
         //打开开始试验按钮使能
         private void OpenStartButtonEnable()

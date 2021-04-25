@@ -12,6 +12,8 @@ namespace TorqueCalibrator.untils
     public static class MysqlTool
     {
         private static readonly string StrCon = ConfigurationManager.ConnectionStrings["MysqlConnection"].ToString();
+        ////是否为测试模式
+        //private static readonly string TestModeLog = ConfigurationManager.ConnectionStrings["TestModeLog"].ToString();
         //废弃代码
         #region
         ////static String connetStr = "server=127.0.0.1;port=3306;user=root;password=root; database=fridge;";

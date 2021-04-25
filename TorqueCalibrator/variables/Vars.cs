@@ -24,5 +24,6 @@ namespace TorqueCalibrator.variables
         public static SerialPortHelper serialPort;
         public static SerialPortHelper serialPortIDCard;
         public static SerialPortHelper serialPortScan;
+        public static string TestModeLog;
     }
 }

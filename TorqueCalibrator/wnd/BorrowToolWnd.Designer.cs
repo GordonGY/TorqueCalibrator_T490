@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BorrowToolWnd));
             this.seriesNumTbx = new System.Windows.Forms.TextBox();
             this.seriesNumLab = new System.Windows.Forms.Label();
             this.borrowBtn = new System.Windows.Forms.Button();
@@ -52,28 +53,25 @@
             // 
             // seriesNumTbx
             // 
-            this.seriesNumTbx.Location = new System.Drawing.Point(114, 18);
-            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.seriesNumTbx.Location = new System.Drawing.Point(76, 12);
             this.seriesNumTbx.Name = "seriesNumTbx";
-            this.seriesNumTbx.Size = new System.Drawing.Size(148, 28);
+            this.seriesNumTbx.Size = new System.Drawing.Size(100, 21);
             this.seriesNumTbx.TabIndex = 11;
             // 
             // seriesNumLab
             // 
             this.seriesNumLab.AutoSize = true;
-            this.seriesNumLab.Location = new System.Drawing.Point(26, 26);
-            this.seriesNumLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.seriesNumLab.Location = new System.Drawing.Point(17, 17);
             this.seriesNumLab.Name = "seriesNumLab";
-            this.seriesNumLab.Size = new System.Drawing.Size(80, 18);
+            this.seriesNumLab.Size = new System.Drawing.Size(53, 12);
             this.seriesNumLab.TabIndex = 10;
             this.seriesNumLab.Text = "扳手条码";
             // 
             // borrowBtn
             // 
-            this.borrowBtn.Location = new System.Drawing.Point(291, 14);
-            this.borrowBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.borrowBtn.Location = new System.Drawing.Point(194, 9);
             this.borrowBtn.Name = "borrowBtn";
-            this.borrowBtn.Size = new System.Drawing.Size(78, 35);
+            this.borrowBtn.Size = new System.Drawing.Size(52, 23);
             this.borrowBtn.TabIndex = 12;
             this.borrowBtn.Text = "借用";
             this.borrowBtn.UseVisualStyleBackColor = true;
@@ -81,10 +79,9 @@
             // 
             // extendBtn
             // 
-            this.extendBtn.Location = new System.Drawing.Point(515, 14);
-            this.extendBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.extendBtn.Location = new System.Drawing.Point(343, 9);
             this.extendBtn.Name = "extendBtn";
-            this.extendBtn.Size = new System.Drawing.Size(76, 35);
+            this.extendBtn.Size = new System.Drawing.Size(51, 23);
             this.extendBtn.TabIndex = 13;
             this.extendBtn.Text = "展开";
             this.extendBtn.UseVisualStyleBackColor = true;
@@ -100,12 +97,11 @@
             this.status,
             this.createTime,
             this.updateTime});
-            this.RecordDgv.Location = new System.Drawing.Point(28, 122);
-            this.RecordDgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.RecordDgv.Location = new System.Drawing.Point(19, 81);
             this.RecordDgv.Name = "RecordDgv";
             this.RecordDgv.RowHeadersWidth = 51;
             this.RecordDgv.RowTemplate.Height = 23;
-            this.RecordDgv.Size = new System.Drawing.Size(1074, 410);
+            this.RecordDgv.Size = new System.Drawing.Size(716, 273);
             this.RecordDgv.TabIndex = 14;
             this.RecordDgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.RecordDgv_CellContentClick);
             // 
@@ -154,10 +150,9 @@
             // 
             // queryBtn
             // 
-            this.queryBtn.Location = new System.Drawing.Point(798, 71);
-            this.queryBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.queryBtn.Location = new System.Drawing.Point(532, 47);
             this.queryBtn.Name = "queryBtn";
-            this.queryBtn.Size = new System.Drawing.Size(91, 36);
+            this.queryBtn.Size = new System.Drawing.Size(61, 24);
             this.queryBtn.TabIndex = 15;
             this.queryBtn.Text = "查询";
             this.queryBtn.UseVisualStyleBackColor = true;
@@ -166,38 +161,34 @@
             // endDtp
             // 
             this.endDtp.CustomFormat = "yyyy-MM-dd";
-            this.endDtp.Location = new System.Drawing.Point(498, 72);
-            this.endDtp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.endDtp.Location = new System.Drawing.Point(332, 48);
             this.endDtp.Name = "endDtp";
-            this.endDtp.Size = new System.Drawing.Size(183, 28);
+            this.endDtp.Size = new System.Drawing.Size(123, 21);
             this.endDtp.TabIndex = 18;
             // 
             // startDtp
             // 
             this.startDtp.CustomFormat = "yyyy-MM-dd";
-            this.startDtp.Location = new System.Drawing.Point(291, 72);
-            this.startDtp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.startDtp.Location = new System.Drawing.Point(194, 48);
             this.startDtp.Name = "startDtp";
-            this.startDtp.Size = new System.Drawing.Size(183, 28);
+            this.startDtp.Size = new System.Drawing.Size(123, 21);
             this.startDtp.TabIndex = 19;
             // 
             // userLab
             // 
             this.userLab.AutoSize = true;
-            this.userLab.Location = new System.Drawing.Point(43, 79);
-            this.userLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.userLab.Location = new System.Drawing.Point(29, 53);
             this.userLab.Name = "userLab";
-            this.userLab.Size = new System.Drawing.Size(62, 18);
+            this.userLab.Size = new System.Drawing.Size(41, 12);
             this.userLab.TabIndex = 17;
             this.userLab.Text = "借用人";
             // 
             // userCbx
             // 
             this.userCbx.FormattingEnabled = true;
-            this.userCbx.Location = new System.Drawing.Point(114, 72);
-            this.userCbx.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userCbx.Location = new System.Drawing.Point(76, 48);
             this.userCbx.Name = "userCbx";
-            this.userCbx.Size = new System.Drawing.Size(148, 26);
+            this.userCbx.Size = new System.Drawing.Size(100, 20);
             this.userCbx.TabIndex = 16;
             // 
             // statusChbx
@@ -205,20 +196,19 @@
             this.statusChbx.AutoSize = true;
             this.statusChbx.Checked = true;
             this.statusChbx.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.statusChbx.Location = new System.Drawing.Point(690, 77);
-            this.statusChbx.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.statusChbx.Location = new System.Drawing.Point(460, 51);
+            this.statusChbx.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.statusChbx.Name = "statusChbx";
-            this.statusChbx.Size = new System.Drawing.Size(106, 22);
+            this.statusChbx.Size = new System.Drawing.Size(72, 16);
             this.statusChbx.TabIndex = 20;
             this.statusChbx.Text = "只查借出";
             this.statusChbx.UseVisualStyleBackColor = true;
             // 
             // returnBtn
             // 
-            this.returnBtn.Location = new System.Drawing.Point(397, 14);
-            this.returnBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.returnBtn.Location = new System.Drawing.Point(265, 9);
             this.returnBtn.Name = "returnBtn";
-            this.returnBtn.Size = new System.Drawing.Size(78, 35);
+            this.returnBtn.Size = new System.Drawing.Size(52, 23);
             this.returnBtn.TabIndex = 12;
             this.returnBtn.Text = "归还";
             this.returnBtn.UseVisualStyleBackColor = true;
@@ -227,17 +217,16 @@
             // borrowLab
             // 
             this.borrowLab.AutoSize = true;
-            this.borrowLab.Location = new System.Drawing.Point(623, 23);
-            this.borrowLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.borrowLab.Location = new System.Drawing.Point(415, 15);
             this.borrowLab.Name = "borrowLab";
-            this.borrowLab.Size = new System.Drawing.Size(0, 18);
+            this.borrowLab.Size = new System.Drawing.Size(0, 12);
             this.borrowLab.TabIndex = 17;
             // 
             // BorrowToolWnd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 58);
+            this.ClientSize = new System.Drawing.Size(417, 46);
             this.Controls.Add(this.statusChbx);
             this.Controls.Add(this.endDtp);
             this.Controls.Add(this.startDtp);
@@ -251,9 +240,10 @@
             this.Controls.Add(this.borrowBtn);
             this.Controls.Add(this.seriesNumTbx);
             this.Controls.Add(this.seriesNumLab);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BorrowToolWnd";
-            this.Text = "BorrowToolWnd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "工具借用";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BorrowToolWnd_FormClosing);
             this.Load += new System.EventHandler(this.BorrowToolWnd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RecordDgv)).EndInit();
