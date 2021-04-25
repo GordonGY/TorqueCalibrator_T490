@@ -50,7 +50,10 @@ namespace TorqueCalibrator
         //BaseTorque torque;
         BorrowToolWnd borrowForm = null;
         //试验动作线程
-        //Thread th_temp=null;
+        Thread th_temp=null;
+
+        //试验参数读取线程
+        Thread motorReadThread  = null;
         #endregion
 
         #region 构造函数
@@ -70,18 +73,14 @@ namespace TorqueCalibrator
             //打开串口
             if (serialPort.open() && serialScanPort.open())
             {
-                label2.Text = "串口开启成功！";
                 barHeaderItem1.Caption = "串口开启成功！";
             }
             else
             {
-                label2.Text = "串口开启失败！";
                 barHeaderItem1.Caption = "串口开启失败！";
             }
             //界面初始化
             this.Text = "欢迎使用扭矩校验系统，当前登录: " + P_Con_User.CurrentUser.User_name;
-            //this.timeLab.Text = "        " + DateTime.Now.Date.ToString("yyyy年MM月dd日");
-            //this.userLab.Text = P_Con_User.CurrentUser.User_name;
             this.barStaticItem1.Caption = DateTime.Now.Date.ToString("yyyy年MM月dd日");
             techDgv.Visible = false;
             
@@ -90,9 +89,23 @@ namespace TorqueCalibrator
             s7help = new S7Help(this);
             s7help.SiemensS7NetConnect(HslCommunication.Profinet.Siemens.SiemensPLCS.S1200, out strMsg);
             barHeaderItem1.Caption += "; " + strMsg;
-            label2.Text += "-------" + strMsg;
-            //Thread.Sleep(1000);
+
+            //开启读取读取电机参数线程
+            motorReadThread  = new Thread(ReadMotorValue);
+            motorReadThread.Start();
         }
+        #endregion
+        
+        #region PLC实时参数读取
+
+        //读取电机参数
+        private void ReadMotorValue()
+        {
+            Thread.Sleep(1000);
+            RightMotorPosition.EditValue =  s7help.ReadPLCLeftMotorPositon();
+            LeftMotorPosition.EditValue =  s7help.ReadPLCRightMotorPositon();
+        }
+
         #endregion
 
         #region 扭矩枪扫码或手动输入
@@ -289,7 +302,7 @@ namespace TorqueCalibrator
                 addGoodHintMessage("大纲导入成功");
                 addGoodHintMessage("开始测试.....");
                 //线程
-                Thread th_temp = new Thread(torque.doTest);
+                th_temp = new Thread(torque.doTest);
                 th_temp.Start();
             }
             catch (Exception ex)
@@ -412,7 +425,7 @@ namespace TorqueCalibrator
                 }
                 addGoodHintMessage("大纲导入成功");
                 //线程
-                Thread th_temp = new Thread(torque.doTest);
+                th_temp = new Thread(torque.doTest);
                 th_temp.Start();
             }
             catch (Exception ex)
@@ -431,13 +444,13 @@ namespace TorqueCalibrator
         {
             //试验完成后置位试验结束,为了试验停止
             s7help.WriteTestEnd(true);
-            
+
             //停止试验线程
-            //th_temp.Abort();
-            //while(th_temp.ThreadState!=ThreadState.Aborted)
-            //{
-            //    Thread.Sleep(100);
-            //}
+            th_temp.Abort();
+            while (th_temp.ThreadState != ThreadState.Aborted)
+            {
+                Thread.Sleep(100);
+            }
             #region
             //for (int i = 0; i < 20; i++)
             //{
@@ -863,10 +876,18 @@ namespace TorqueCalibrator
         //停止试验按钮
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //关闭开启的试验线程
+
             //打开按钮使能
             barButtonItem1.Enabled = true;
             //试验完成后置位试验结束,为了试验停止
             s7help.WriteTestEnd(true);
+            //停止试验线程
+            th_temp.Abort();
+            while (th_temp.ThreadState != ThreadState.Aborted)
+            {
+                Thread.Sleep(100);
+            }
         }
 
 

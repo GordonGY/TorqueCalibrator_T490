@@ -30,12 +30,14 @@ namespace TorqueCalibrator.wnd
 
         private void Login_Load(object sender, EventArgs e)
         {
+            label1.Visible = false;
             //string strMsg;
             //s7help.SiemensS7NetConnect(HslCommunication.Profinet.Siemens.SiemensPLCS.S1200, out strMsg);
             Vars.serialPortIDCard = new IDCardSerialPort(this);
             if (!Vars.serialPortIDCard.open())
             {
-                 label1.Text = "串口打开失败！";
+                 label1.Visible = true;
+                label1.Text = "串口打开失败,请检查后重新开启软件！";
             }
         }
 

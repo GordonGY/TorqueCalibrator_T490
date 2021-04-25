@@ -227,5 +227,16 @@ namespace TorqueCalibrator.untils
 
             return siemensTcpNet.ReadBool(ConfigurationManager.AppSettings["PowerOnInitStatus"].ToString()).Content;
         }
+
+        //读取左边电机位置
+        public float ReadPLCLeftMotorPositon()
+        {
+            return siemensTcpNet.ReadFloat(ConfigurationManager.AppSettings["LeftMotorPositon"].ToString()).Content;
+        }
+        //读取右边电机位置
+        public float ReadPLCRightMotorPositon()
+        {
+            return siemensTcpNet.ReadFloat(ConfigurationManager.AppSettings["RightMotorPositon"].ToString()).Content;
+        }
     }
 }

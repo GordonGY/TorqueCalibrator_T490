@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -101,6 +101,11 @@
             this.sidePanel1 = new DevExpress.XtraEditors.SidePanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RightMotorPosition = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.LeftMotorPosition = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.RecordDetailDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.techDgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -110,23 +115,25 @@
             this.sidePanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(1424, 821);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox1.Location = new System.Drawing.Point(1139, 672);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 29);
+            this.textBox1.Size = new System.Drawing.Size(132, 26);
             this.textBox1.TabIndex = 0;
             this.textBox1.Visible = false;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(1424, 886);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox2.Location = new System.Drawing.Point(1139, 725);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 29);
+            this.textBox2.Size = new System.Drawing.Size(132, 26);
             this.textBox2.TabIndex = 0;
             this.textBox2.Visible = false;
             // 
@@ -142,10 +149,10 @@
             // 
             // seriesNumTbx
             // 
-            this.seriesNumTbx.Location = new System.Drawing.Point(114, 5);
-            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.seriesNumTbx.Location = new System.Drawing.Point(98, 4);
+            this.seriesNumTbx.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.seriesNumTbx.Name = "seriesNumTbx";
-            this.seriesNumTbx.Size = new System.Drawing.Size(219, 29);
+            this.seriesNumTbx.Size = new System.Drawing.Size(176, 26);
             this.seriesNumTbx.TabIndex = 0;
             this.seriesNumTbx.Text = "00903";
             this.seriesNumTbx.TextChanged += new System.EventHandler(this.seriesNumTbx_TextChanged);
@@ -154,10 +161,9 @@
             // 
             this.seriesNumLab.AutoSize = true;
             this.seriesNumLab.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.seriesNumLab.Location = new System.Drawing.Point(4, 0);
-            this.seriesNumLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.seriesNumLab.Location = new System.Drawing.Point(3, 0);
             this.seriesNumLab.Name = "seriesNumLab";
-            this.seriesNumLab.Size = new System.Drawing.Size(101, 30);
+            this.seriesNumLab.Size = new System.Drawing.Size(88, 25);
             this.seriesNumLab.TabIndex = 9;
             this.seriesNumLab.Text = "工具编号";
             // 
@@ -178,12 +184,12 @@
             this.upper,
             this.lower});
             this.RecordDetailDgv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.RecordDetailDgv.Location = new System.Drawing.Point(0, 46);
-            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.RecordDetailDgv.Location = new System.Drawing.Point(0, 38);
+            this.RecordDetailDgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RecordDetailDgv.Name = "RecordDetailDgv";
             this.RecordDetailDgv.RowHeadersWidth = 51;
             this.RecordDetailDgv.RowTemplate.Height = 23;
-            this.RecordDetailDgv.Size = new System.Drawing.Size(1190, 423);
+            this.RecordDetailDgv.Size = new System.Drawing.Size(951, 346);
             this.RecordDetailDgv.TabIndex = 11;
             // 
             // id2
@@ -279,10 +285,10 @@
             // 
             this.hintRtbx.Dock = System.Windows.Forms.DockStyle.Right;
             this.hintRtbx.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hintRtbx.Location = new System.Drawing.Point(1190, 46);
-            this.hintRtbx.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.hintRtbx.Location = new System.Drawing.Point(951, 38);
+            this.hintRtbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.hintRtbx.Name = "hintRtbx";
-            this.hintRtbx.Size = new System.Drawing.Size(476, 879);
+            this.hintRtbx.Size = new System.Drawing.Size(382, 636);
             this.hintRtbx.TabIndex = 14;
             this.hintRtbx.Text = "";
             // 
@@ -302,12 +308,12 @@
             this.lower1});
             this.techDgv.Cursor = System.Windows.Forms.Cursors.Hand;
             this.techDgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.techDgv.Location = new System.Drawing.Point(0, 469);
-            this.techDgv.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.techDgv.Location = new System.Drawing.Point(0, 384);
+            this.techDgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.techDgv.Name = "techDgv";
             this.techDgv.RowHeadersWidth = 51;
             this.techDgv.RowTemplate.Height = 23;
-            this.techDgv.Size = new System.Drawing.Size(1190, 456);
+            this.techDgv.Size = new System.Drawing.Size(951, 290);
             this.techDgv.TabIndex = 16;
             // 
             // checkbox
@@ -336,8 +342,8 @@
             // 
             // ToolName
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ToolName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ToolName.DefaultCellStyle = dataGridViewCellStyle1;
             this.ToolName.HeaderText = "工具名称";
             this.ToolName.MinimumWidth = 6;
             this.ToolName.Name = "ToolName";
@@ -383,75 +389,70 @@
             // 
             this.hintLab.AutoSize = true;
             this.hintLab.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.hintLab.Location = new System.Drawing.Point(1200, 527);
-            this.hintLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.hintLab.Location = new System.Drawing.Point(960, 431);
             this.hintLab.Name = "hintLab";
-            this.hintLab.Size = new System.Drawing.Size(54, 22);
+            this.hintLab.Size = new System.Drawing.Size(47, 19);
             this.hintLab.TabIndex = 17;
             this.hintLab.Text = "消息";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1222, 633);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(978, 518);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 22);
+            this.label1.Size = new System.Drawing.Size(83, 18);
             this.label1.TabIndex = 18;
             this.label1.Text = "扭矩实时值";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(1360, 629);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox3.Location = new System.Drawing.Point(1088, 515);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 29);
+            this.textBox3.Size = new System.Drawing.Size(132, 26);
             this.textBox3.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("宋体", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(1116, 1166);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(893, 954);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 22);
+            this.label2.Size = new System.Drawing.Size(47, 19);
             this.label2.TabIndex = 17;
             this.label2.Text = "消息";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(1424, 688);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox4.Location = new System.Drawing.Point(1139, 563);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 29);
+            this.textBox4.Size = new System.Drawing.Size(132, 26);
             this.textBox4.TabIndex = 0;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(1424, 748);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.textBox5.Location = new System.Drawing.Point(1139, 612);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(164, 29);
+            this.textBox5.Size = new System.Drawing.Size(132, 26);
             this.textBox5.TabIndex = 0;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1311, 692);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(1049, 566);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 22);
+            this.label3.Size = new System.Drawing.Size(83, 18);
             this.label3.TabIndex = 20;
             this.label3.Text = "返回扭矩值";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1330, 758);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(1064, 620);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 22);
+            this.label4.Size = new System.Drawing.Size(68, 18);
             this.label4.TabIndex = 21;
             this.label4.Text = "试验结论";
             // 
@@ -476,12 +477,14 @@
             this.barHeaderItem1,
             this.barButtonItem8,
             this.ManualChoseCB1,
-            this.postCheckRbx1});
+            this.postCheckRbx1,
+            this.RightMotorPosition,
+            this.LeftMotorPosition});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(11, 15, 11, 15);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
+            this.ribbonControl1.MaxItemId = 25;
             this.ribbonControl1.Name = "ribbonControl1";
-            this.ribbonControl1.OptionsMenuMinWidth = 619;
+            this.ribbonControl1.OptionsMenuMinWidth = 495;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
             this.ribbonPage3,
@@ -489,8 +492,10 @@
             this.ribbonControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemHypertextLabel1,
             this.repositoryItemHypertextLabel2,
-            this.repositoryItemTimeEdit1});
-            this.ribbonControl1.Size = new System.Drawing.Size(1666, 237);
+            this.repositoryItemTimeEdit1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemTextEdit2});
+            this.ribbonControl1.Size = new System.Drawing.Size(1333, 197);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
             // barButtonItem7
@@ -609,7 +614,8 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
             this.ribbonPageGroup7,
-            this.ribbonPageGroup8});
+            this.ribbonPageGroup8,
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "试验";
             // 
@@ -678,11 +684,11 @@
             // 
             this.ribbonStatusBar1.ItemLinks.Add(this.barStaticItem1);
             this.ribbonStatusBar1.ItemLinks.Add(this.barHeaderItem1);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 1162);
-            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 871);
+            this.ribbonStatusBar1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(1666, 36);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(1333, 30);
             // 
             // ribbonPage2
             // 
@@ -697,10 +703,9 @@
             this.sidePanel1.Controls.Add(this.flowLayoutPanel1);
             this.sidePanel1.Controls.Add(this.navBarControl1);
             this.sidePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sidePanel1.Location = new System.Drawing.Point(0, 237);
-            this.sidePanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sidePanel1.Location = new System.Drawing.Point(0, 197);
             this.sidePanel1.Name = "sidePanel1";
-            this.sidePanel1.Size = new System.Drawing.Size(1666, 925);
+            this.sidePanel1.Size = new System.Drawing.Size(1333, 674);
             this.sidePanel1.TabIndex = 25;
             this.sidePanel1.Text = "sidePanel1";
             // 
@@ -710,26 +715,55 @@
             this.flowLayoutPanel1.Controls.Add(this.seriesNumTbx);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1666, 46);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1333, 38);
             this.flowLayoutPanel1.TabIndex = 20;
             // 
             // navBarControl1
             // 
-            this.navBarControl1.Location = new System.Drawing.Point(1315, 609);
-            this.navBarControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.navBarControl1.Location = new System.Drawing.Point(1052, 498);
             this.navBarControl1.Name = "navBarControl1";
-            this.navBarControl1.OptionsNavPane.ExpandedWidth = 175;
-            this.navBarControl1.Size = new System.Drawing.Size(175, 367);
+            this.navBarControl1.OptionsNavPane.ExpandedWidth = 140;
+            this.navBarControl1.Size = new System.Drawing.Size(140, 300);
             this.navBarControl1.TabIndex = 18;
             this.navBarControl1.Text = "navBarControl1";
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.RightMotorPosition);
+            this.ribbonPageGroup6.ItemLinks.Add(this.LeftMotorPosition);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "电机实时位置显示";
+            // 
+            // RightMotorPosition
+            // 
+            this.RightMotorPosition.Caption = "左边电机实时位置";
+            this.RightMotorPosition.Edit = this.repositoryItemTextEdit1;
+            this.RightMotorPosition.Id = 23;
+            this.RightMotorPosition.Name = "RightMotorPosition";
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // LeftMotorPosition
+            // 
+            this.LeftMotorPosition.Caption = "右边电机实时位置";
+            this.LeftMotorPosition.Edit = this.repositoryItemTextEdit2;
+            this.LeftMotorPosition.Id = 24;
+            this.LeftMotorPosition.Name = "LeftMotorPosition";
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1666, 1198);
+            this.ClientSize = new System.Drawing.Size(1333, 901);
             this.ControlBox = false;
             this.Controls.Add(this.sidePanel1);
             this.Controls.Add(this.label4);
@@ -745,7 +779,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.IconOptions.Image = global::TorqueCalibrator.Properties.Resources.图标_;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Main";
             this.Ribbon = this.ribbonControl1;
             this.StatusBar = this.ribbonStatusBar1;
@@ -761,6 +795,8 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -839,6 +875,11 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
         private DevExpress.XtraBars.BarToggleSwitchItem ManualChoseCB1;
         private DevExpress.XtraBars.BarToggleSwitchItem postCheckRbx1;
+        private DevExpress.XtraBars.BarEditItem RightMotorPosition;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarEditItem LeftMotorPosition;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }
 
