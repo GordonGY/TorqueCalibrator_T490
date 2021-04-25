@@ -88,7 +88,7 @@ namespace TorqueCalibrator
             string strMsg;
             s7help = new S7Help(this);
             s7help.SiemensS7NetConnect(HslCommunication.Profinet.Siemens.SiemensPLCS.S1200, out strMsg);
-            barHeaderItem1.Caption += "; " + strMsg;
+            barHeaderItem1.Caption += "  " + strMsg;
 
             //开启读取读取电机参数线程
             motorReadThread  = new Thread(ReadMotorValue);
@@ -101,9 +101,21 @@ namespace TorqueCalibrator
         //读取电机参数
         private void ReadMotorValue()
         {
-            Thread.Sleep(1000);
-            RightMotorPosition.EditValue =  s7help.ReadPLCLeftMotorPositon();
-            LeftMotorPosition.EditValue =  s7help.ReadPLCRightMotorPositon();
+            while(true)
+            {
+                Thread.Sleep(1000);
+                RightMotorPosition.EditValue =  s7help.ReadPLCLeftMotorPositon();
+                if(s7help.ReadPLCRightMotorPositon() >180)
+                {
+                    LeftMotorPosition.EditValue = s7help.ReadPLCRightMotorPositon() - 360;
+                }
+                else
+                {
+                    LeftMotorPosition.EditValue =  s7help.ReadPLCRightMotorPositon();
+                }
+
+            }
+            
         }
 
         #endregion
